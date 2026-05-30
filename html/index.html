@@ -162,21 +162,13 @@
         background-image: none !important;
     }
 
-    /* --- Hero section: light amethyst tint, NO gradient --- */
-    .hero-gradient {
-        background-color: #f3f0fa !important;
-        background-image: none !important;
-        border-bottom: 1px solid #e2e8f0;
-    }
-    /* Ensure hero text is always dark/readable */
-    .hero-gradient h1,
-    .hero-gradient h2,
-    .hero-gradient p,
-    .hero-gradient li {
-        color: #0f172a !important;
+    /* --- Section bg-primary: allow text opacity variants --- */
+    section.bg-primary p,
+    section.bg-primary span {
+        color: inherit !important;
     }
 
-    /* --- Decorative blobs: kill them entirely for consistency --- */
+    /* --- Decorative blobs (hero uses inline filter, this hides others) --- */
     .blur-3xl, .blur-120px, .blur-150px {
         opacity: 0 !important;
     }
@@ -482,7 +474,7 @@ div.card-hover:hover, .card-hover:hover {
 </nav>
 </header>
 <!-- Hero Section -->
-<section class="hero-gradient relative overflow-hidden pt-12 pb-24 md:py-section-padding-desktop">
+<section class="bg-primary relative overflow-hidden pt-12 pb-24 md:py-section-padding-desktop">
 <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
 <div class="text-on-primary space-y-8">
 <h1 class="font-display-hero-mobile text-display-hero-mobile md:font-display-hero md:text-display-hero">
@@ -502,8 +494,8 @@ div.card-hover:hover, .card-hover:hover {
 </div>
 </div>
 <!-- Decorative blobs -->
-<div class="absolute -top-24 -right-24 w-96 h-96 bg-on-primary-container/20 rounded-full blur-3xl"></div>
-<div class="absolute bottom-0 left-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-white/[0.06] rounded-full" style="filter:blur(80px)"></div>
+<div class="absolute -bottom-12 -left-12 w-72 h-72 bg-white/[0.04] rounded-full" style="filter:blur(80px)"></div>
 </section>
 <!-- Services Section -->
 <section class="bg-surface py-section-padding-mobile md:py-section-padding-desktop" id="servicios">

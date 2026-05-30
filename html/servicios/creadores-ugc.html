@@ -162,20 +162,6 @@
         background-image: none !important;
     }
 
-    /* --- Hero section: light amethyst tint, NO gradient --- */
-    .hero-gradient {
-        background-color: #f3f0fa !important;
-        background-image: none !important;
-        border-bottom: 1px solid #e2e8f0;
-    }
-    /* Ensure hero text is always dark/readable */
-    .hero-gradient h1,
-    .hero-gradient h2,
-    .hero-gradient p,
-    .hero-gradient li {
-        color: #0f172a !important;
-    }
-
     /* --- Decorative blobs: kill them entirely for consistency --- */
     .blur-3xl, .blur-120px, .blur-150px {
         opacity: 0 !important;
@@ -705,7 +691,7 @@ div.card-hover:hover, .card-hover:hover {
 
         // Simple parallax effect for the hero image
         window.addEventListener('mousemove', (e) => {
-            const img = document.querySelector('.hero-gradient img');
+            const img = document.querySelector('section.bg-surface img') || document.querySelector('section img[alt]');
             if (!img) return;
             const x = (window.innerWidth / 2 - e.pageX) / 50;
             const y = (window.innerHeight / 2 - e.pageY) / 50;
