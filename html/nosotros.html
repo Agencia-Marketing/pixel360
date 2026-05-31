@@ -87,17 +87,39 @@
     }
 </script>
 <style>
-    /* ================================================================
-       VIBRANT AGENCY — DEFINITIVE LIGHT THEME (Single Source of Truth)
-       ================================================================ */
+:root {
+    --color-primary: #7e22ce;
+    --color-primary-rgb: 124, 58, 237;
+    --color-primary-dark: #6d28d9;
+    --color-primary-dark-rgb: 109, 40, 217;
+    --color-primary-fixed: #ede9fe;
+    --color-primary-fixed-rgb: 237, 233, 254;
+    --color-primary-fixed-dim: #ddd6fe;
+    --color-inverse-primary: #c4b5fd;
+    --color-inverse-primary-rgb: 196, 181, 253;
+    --color-on-primary: #ffffff;
+    --color-on-primary-fixed: #3b0764;
+
+    --color-surface: #ffffff;
+    --color-surface-dim: #f8f9fc;
+    --color-surface-container-lowest: #ffffff;
+    --color-on-surface: #0f172a;
+    --color-on-surface-rgb: 15, 23, 42;
+    --color-on-surface-variant: #475569;
+    --color-body-text: #334155;
+    --color-body-text-rgb: 51, 65, 85;
+    --color-outline: #e2e8f0;
+
+    --color-footer-bg: #3b0764;
+}
 
     /* --- Fonts --- */
     html { scroll-behavior: smooth; }
 
     body {
         font-family: 'Outfit', sans-serif;
-        background-color: #ffffff;
-        color: #334155;
+        background-color: var(--color-surface);
+        color: var(--color-body-text);
         line-height: 1.65;
     }
 
@@ -105,13 +127,13 @@
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Syne', sans-serif;
         letter-spacing: -0.03em;
-        color: #0f172a;
+        color: var(--color-on-surface);
         text-wrap: balance;
     }
 
     /* --- Body text elements --- */
     p, li, label {
-        color: #475569;
+        color: var(--color-on-surface-variant);
     }
 
     /* --- Header: frosted white bar --- */
@@ -119,33 +141,33 @@
         background-color: rgba(255, 255, 255, 0.92) !important;
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-        border-bottom: 1px solid #e2e8f0 !important;
+        border-bottom: 1px solid var(--color-outline) !important;
     }
 
     /* --- Navigation links --- */
     nav a {
-        color: #475569 !important;
+        color: var(--color-on-surface-variant) !important;
         font-family: 'Outfit', sans-serif;
         font-weight: 500;
         transition: color 0.2s ease;
     }
     nav a:hover {
-        color: #7e22ce !important;
+        color: var(--color-primary) !important;
     }
     /* Active nav link (bold + underline) */
     nav a.font-bold,
     nav a[class*="border-b"] {
-        color: #7e22ce !important;
+        color: var(--color-primary) !important;
     }
     /* Logo text */
     nav .font-bold:first-child,
     nav div.font-bold {
-        color: #0f172a !important;
+        color: var(--color-on-surface) !important;
     }
 
     /* --- Section backgrounds: alternating solid whites/grays --- */
     section {
-        background-color: #ffffff;
+        background-color: var(--color-surface);
         background-image: none !important;
     }
     .bg-surface,
@@ -153,12 +175,12 @@
     .bg-surface-container-low,
     .bg-surface-container-high,
     .bg-surface-container-highest {
-        background-color: #f8f9fc !important;
+        background-color: var(--color-surface-dim) !important;
         background-image: none !important;
     }
     .bg-surface-container-lowest,
     .bg-surface-bright {
-        background-color: #ffffff !important;
+        background-color: var(--color-surface) !important;
         background-image: none !important;
     }
 
@@ -170,33 +192,33 @@
     /* --- Cards: pure white, clean border, soft lift on hover --- */
     .bg-white,
     [class*="bg-white"] {
-        background-color: #ffffff !important;
+        background-color: var(--color-surface) !important;
         background-image: none !important;
         backdrop-filter: none !important;
     }
     div.bg-white,
     div[class*="bg-white"] {
-        border: 1px solid #e2e8f0;
-        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+        border: 1px solid var(--color-outline);
+        box-shadow: 0 2px 8px rgba(var(--color-on-surface-rgb), 0.04);
         transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
     div.bg-white:hover,
     div[class*="bg-white"]:hover {
         transform: translateY(-4px);
-        border-color: #c4b5fd;
-        box-shadow: 0 8px 24px rgba(124, 58, 237, 0.08);
+        border-color: var(--color-inverse-primary);
+        box-shadow: 0 8px 24px rgba(var(--color-primary-rgb), 0.08);
     }
 
     /* --- Icon badge inside cards --- */
     .bg-primary-fixed,
     [class*="bg-primary-fixed"] {
-        background-color: #ede9fe !important;
+        background-color: var(--color-primary-fixed) !important;
         background-image: none !important;
-        color: #7e22ce !important;
+        color: var(--color-primary) !important;
     }
     .bg-primary-fixed *,
     [class*="bg-primary-fixed"] * {
-        color: #7e22ce !important;
+        color: var(--color-primary) !important;
     }
 
     /* --- Primary brand button / CTA --- */
@@ -204,31 +226,31 @@
     button.bg-primary-container,
     a.bg-primary,
     button.bg-primary {
-        background-color: #7e22ce !important;
+        background-color: var(--color-primary) !important;
         background-image: none !important;
-        color: #ffffff !important;
+        color: var(--color-on-primary) !important;
         border: none !important;
-        box-shadow: 0 3px 10px rgba(124, 58, 237, 0.20);
+        box-shadow: 0 3px 10px rgba(var(--color-primary-rgb), 0.20);
         transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
     }
     a.bg-primary-container:hover,
     button.bg-primary-container:hover,
     a.bg-primary:hover,
     button.bg-primary:hover {
-        background-color: #6d28d9 !important;
-        box-shadow: 0 6px 16px rgba(124, 58, 237, 0.30) !important;
+        background-color: var(--color-primary-dark) !important;
+        box-shadow: 0 6px 16px rgba(var(--color-primary-rgb), 0.30) !important;
         transform: translateY(-1px);
     }
     a.bg-primary-container *,
     button.bg-primary-container *,
     a.bg-primary *,
     button.bg-primary * {
-        color: #ffffff !important;
+        color: var(--color-on-primary) !important;
     }
 
     /* --- "Why us" / full-bleed purple section --- */
     section.bg-primary {
-        background-color: #7e22ce !important;
+        background-color: var(--color-primary) !important;
         background-image: none !important;
     }
     section.bg-primary h2,
@@ -237,7 +259,7 @@
     section.bg-primary p,
     section.bg-primary span,
     section.bg-primary li {
-        color: #ffffff !important;
+        color: var(--color-on-primary) !important;
     }
 
     /* --- Glass-card in dark sections (keeps white text on purple bg) --- */
@@ -247,16 +269,16 @@
         backdrop-filter: blur(6px);
     }
     section.bg-primary .glass-card * {
-        color: #ffffff !important;
+        color: var(--color-on-primary) !important;
     }
 
     /* --- Text utility overrides (fix inherited Tailwind color tokens) --- */
-    .text-on-surface          { color: #0f172a !important; }
-    .text-on-surface-variant  { color: #475569 !important; }
-    .text-on-primary          { color: #ffffff !important; }   /* white — used in purple CTAs */
-    .text-primary             { color: #7e22ce !important; }
-    .text-on-primary-container{ color: #ffffff !important; }
-    .text-on-primary-fixed    { color: #3b0764 !important; }
+    .text-on-surface          { color: var(--color-on-surface) !important; }
+    .text-on-surface-variant  { color: var(--color-on-surface-variant) !important; }
+    .text-on-primary          { color: var(--color-on-primary) !important; }   /* white — used in purple CTAs */
+    .text-primary             { color: var(--color-primary) !important; }
+    .text-on-primary-container{ color: var(--color-on-primary) !important; }
+    .text-on-primary-fixed    { color: var(--color-on-primary-fixed) !important; }
 
     /* Material icon inside nav / buttons inherits parent color */
     .material-symbols-outlined { font-variation-settings: 'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24; }
@@ -264,14 +286,14 @@
     /* --- Images --- */
     img {
         border-radius: 1rem;
-        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+        box-shadow: 0 4px 16px rgba(var(--color-on-surface-rgb), 0.06);
     }
 
     /* --- Scrollbar --- */
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #f8f9fc; }
-    ::-webkit-scrollbar-thumb { background: #c4b5fd; border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: #7e22ce; }
+    ::-webkit-scrollbar-track { background: var(--color-surface-dim); }
+    ::-webkit-scrollbar-thumb { background: var(--color-inverse-primary); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
 
     /* --- Fix: bg-white/10, bg-white/20 inside purple sections stay transparent --- */
     section.bg-primary [class*="bg-white/"],
@@ -304,13 +326,13 @@
     }
     
     /* --- Footer: dark purple bg, ALL text white --- */
-    footer, footer * { color: #ffffff !important; }
+    footer, footer * { color: var(--color-on-primary) !important; }
     footer {
-        background-color: #3b0764 !important;
+        background-color: var(--color-footer-bg) !important;
         background-image: none !important;
     }
     footer h1, footer h2, footer h3, footer h4, footer h5, footer h6, footer div.font-bold {
-        color: #ffffff !important;
+        color: var(--color-on-primary) !important;
         font-family: 'Syne', sans-serif;
     }
     footer p, footer span, footer li, footer a, footer div, footer label {
@@ -324,12 +346,12 @@
         font-weight: 600;
     }
     footer a:hover {
-        color: #c4b5fd !important;
+        color: var(--color-inverse-primary) !important;
     }
     footer button {
         background-color: rgba(255, 255, 255, 0.12) !important;
         border: 1px solid rgba(255, 255, 255, 0.18) !important;
-        color: #ffffff !important;
+        color: var(--color-on-primary) !important;
         transition: background-color 0.2s ease;
     }
     footer button:hover { background-color: rgba(255, 255, 255, 0.22) !important; }
@@ -358,7 +380,7 @@
     div[class*="bg-primary"] span,
     div[class*="bg-primary"] li,
     div[class*="bg-primary"] a {
-        color: #ffffff !important;
+        color: var(--color-on-primary) !important;
     }
     
     /* Exception for buttons inside purple sections */
@@ -366,13 +388,13 @@
     section[class*="bg-primary"] a.bg-white,
     div[class*="bg-primary"] button.bg-white,
     div[class*="bg-primary"] a.bg-white {
-        color: #7e22ce !important;
+        color: var(--color-primary) !important;
     }
     section[class*="bg-primary"] button.bg-white *,
     section[class*="bg-primary"] a.bg-white *,
     div[class*="bg-primary"] button.bg-white *,
     div[class*="bg-primary"] a.bg-white * {
-        color: #7e22ce !important;
+        color: var(--color-primary) !important;
     }
 
 /* ================================================================
@@ -399,7 +421,7 @@
 }
 .btn-magnetic:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.25);
+    box-shadow: 0 8px 24px rgba(var(--color-primary-rgb), 0.25);
 }
 .btn-magnetic .icon-wrap {
     display: inline-block;
@@ -433,7 +455,7 @@ div.card-hover, .card-hover {
 }
 div.card-hover:hover, .card-hover:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 32px rgba(124, 58, 237, 0.10);
+    box-shadow: 0 12px 32px rgba(var(--color-primary-rgb), 0.10);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -452,7 +474,7 @@ div.card-hover:hover, .card-hover:hover {
 <!-- Header Section -->
 <header class="bg-primary-container top-0 sticky z-50 transition-all duration-300">
 <nav class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
-<div class="font-headline-md text-headline-md font-bold" style="color:#0f172a;">Plantilla 1.</div>
+<div class="font-headline-md text-headline-md font-bold" style="color:var(--color-on-surface)">Plantilla 1.</div>
 <div class="hidden md:flex items-center gap-8">
 <a class="font-body-md text-body-md font-medium transition-colors" href="index.html">Inicio</a>
 <a class="font-body-md text-body-md font-medium transition-colors" href="nosotros.html">Nosotros</a>
@@ -605,16 +627,16 @@ div.card-hover:hover, .card-hover:hover {
 
     <!-- Col 1: Brand -->
     <div class="space-y-6">
-      <div class="font-headline-md text-headline-md font-bold" style="color:#ffffff;">Plantilla 1.</div>
+      <div class="font-headline-md text-headline-md font-bold" style="color:var(--color-on-primary)">Plantilla 1.</div>
       <p class="font-body-md text-body-md" style="color:rgba(255,255,255,0.65);">
         Soluciones digitales premium para impulsar el crecimiento de tu empresa.
       </p>
       <div class="flex gap-3">
         <button class="w-10 h-10 rounded-full flex items-center justify-center transition-colors press-effect" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);">
-          <span class="material-symbols-outlined text-[20px]" style="color:#ffffff;">share</span>
+          <span class="material-symbols-outlined text-[20px]" style="color:var(--color-on-primary);">share</span>
         </button>
         <button class="w-10 h-10 rounded-full flex items-center justify-center transition-colors press-effect" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);">
-          <span class="material-symbols-outlined text-[20px]" style="color:#ffffff;">public</span>
+          <span class="material-symbols-outlined text-[20px]" style="color:var(--color-on-primary);">public</span>
         </button>
       </div>
     </div>
@@ -642,10 +664,10 @@ div.card-hover:hover, .card-hover:hover {
     <div class="space-y-6">
       <h5 class="font-label-sm text-label-sm uppercase tracking-widest" style="color:rgba(255,255,255,0.50);">Páginas</h5>
       <ul class="space-y-3 font-body-md text-body-md">
-        <li><a href="index.html"    style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='#c4b5fd'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Inicio</a></li>
-        <li><a href="nosotros.html"  style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='#c4b5fd'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Nosotros</a></li>
-        <li><a href="index.html#servicios" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='#c4b5fd'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Servicios</a></li>
-        <li><a href="contacto.html"  style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='#c4b5fd'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Contacto</a></li>
+        <li><a href="index.html"    style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Inicio</a></li>
+        <li><a href="nosotros.html"  style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Nosotros</a></li>
+        <li><a href="index.html#servicios" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Servicios</a></li>
+        <li><a href="contacto.html"  style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Contacto</a></li>
       </ul>
     </div>
 
@@ -653,10 +675,10 @@ div.card-hover:hover, .card-hover:hover {
     <div class="space-y-6">
       <h5 class="font-label-sm text-label-sm uppercase tracking-widest" style="color:rgba(255,255,255,0.50);">Enlaces Rápidos</h5>
       <ul class="space-y-3 font-body-md text-body-md">
-        <li><a href="#" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='#c4b5fd'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Blog</a></li>
-        <li><a href="#" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='#c4b5fd'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">FAQ</a></li>
-        <li><a href="#" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='#c4b5fd'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Privacidad</a></li>
-        <li><a href="#" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='#c4b5fd'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Términos</a></li>
+        <li><a href="#" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Blog</a></li>
+        <li><a href="#" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">FAQ</a></li>
+        <li><a href="#" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Privacidad</a></li>
+        <li><a href="#" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Términos</a></li>
       </ul>
     </div>
 
@@ -666,8 +688,8 @@ div.card-hover:hover, .card-hover:hover {
   <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4" style="border-top:1px solid rgba(255,255,255,0.12);">
     <p class="font-label-sm text-label-sm" style="color:rgba(255,255,255,0.45);">© 2026 Plantilla 1 | Todos los derechos reservados.</p>
     <div class="flex gap-6">
-      <a href="#" class="font-label-sm text-label-sm" style="color:rgba(255,255,255,0.45);" onmouseover="this.style.color='#c4b5fd'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Términos</a>
-      <a href="#" class="font-label-sm text-label-sm" style="color:rgba(255,255,255,0.45);" onmouseover="this.style.color='#c4b5fd'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Soporte</a>
+      <a href="#" class="font-label-sm text-label-sm" style="color:rgba(255,255,255,0.45);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Términos</a>
+      <a href="#" class="font-label-sm text-label-sm" style="color:rgba(255,255,255,0.45);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Soporte</a>
     </div>
   </div>
 

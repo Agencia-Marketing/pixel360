@@ -19,7 +19,7 @@ import '../styles/global.css';
 <body class="bg-background text-on-surface font-body-md">
   <header class="bg-primary-container top-0 sticky z-50 transition-all duration-300">
     <nav class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
-      <div class="font-headline-md text-headline-md font-bold" style="color:#0f172a;">Plantilla 1.</div>
+      <div class="font-headline-md text-headline-md font-bold" style="color:var(--color-on-surface)">Plantilla 1.</div>
       <div class="hidden md:flex items-center gap-8">
         <a class="font-body-md text-body-md font-medium transition-colors duration-200 hover:text-primary" href="/">Inicio</a>
         <a class="font-body-md text-body-md font-medium transition-colors duration-200 hover:text-primary" href="/nosotros">Nosotros</a>
@@ -76,20 +76,20 @@ import '../styles/global.css';
         <div class="space-y-6">
           <h5 class="font-label-sm text-label-sm uppercase tracking-widest" style="color:rgba(255,255,255,0.50);">Páginas</h5>
           <ul class="space-y-3 font-body-md text-body-md">
-            <li><a href="/" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='#c4b5fd'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Inicio</a></li>
-            <li><a href="/nosotros" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='#c4b5fd'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Nosotros</a></li>
-            <li><a href="/#servicios" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='#c4b5fd'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Servicios</a></li>
-            <li><a href="/contacto" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='#c4b5fd'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Contacto</a></li>
+            <li><a href="/" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Inicio</a></li>
+            <li><a href="/nosotros" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Nosotros</a></li>
+            <li><a href="/#servicios" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Servicios</a></li>
+            <li><a href="/contacto" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Contacto</a></li>
           </ul>
         </div>
 
         <div class="space-y-6">
           <h5 class="font-label-sm text-label-sm uppercase tracking-widest" style="color:rgba(255,255,255,0.50);">Enlaces Rápidos</h5>
           <ul class="space-y-3 font-body-md text-body-md">
-            <li><a href="#" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='#c4b5fd'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Blog</a></li>
-            <li><a href="#" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='#c4b5fd'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">FAQ</a></li>
-            <li><a href="#" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='#c4b5fd'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Privacidad</a></li>
-            <li><a href="#" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='#c4b5fd'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Términos</a></li>
+            <li><a href="#" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Blog</a></li>
+            <li><a href="#" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">FAQ</a></li>
+            <li><a href="#" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Privacidad</a></li>
+            <li><a href="#" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Términos</a></li>
           </ul>
         </div>
       </div>
@@ -97,8 +97,8 @@ import '../styles/global.css';
       <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4" style="border-top:1px solid rgba(255,255,255,0.12);">
         <p class="font-label-sm text-label-sm" style="color:rgba(255,255,255,0.45);">&copy; 2026 Plantilla 1 | Todos los derechos reservados.</p>
         <div class="flex gap-6">
-          <a href="#" class="font-label-sm text-label-sm" style="color:rgba(255,255,255,0.45);" onmouseover="this.style.color='#c4b5fd'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Términos</a>
-          <a href="#" class="font-label-sm text-label-sm" style="color:rgba(255,255,255,0.45);" onmouseover="this.style.color='#c4b5fd'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Soporte</a>
+          <a href="#" class="font-label-sm text-label-sm" style="color:rgba(255,255,255,0.45);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Términos</a>
+          <a href="#" class="font-label-sm text-label-sm" style="color:rgba(255,255,255,0.45);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Soporte</a>
         </div>
       </div>
     </div>
