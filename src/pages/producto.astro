@@ -1,0 +1,241 @@
+---
+import Layout from '../layouts/Layout.astro';
+import plansData from '../content/settings/plans.json';
+import site from '../content/settings/site.json';
+
+export const prerender = true;
+
+const phone = site.contact.phone;
+const cleanPhone = phone.replace(/[^0-9]/g, '');
+---
+
+<Layout title="Contratar Plan | Agencia Digital">
+  <main class="bg-surface py-16 md:py-24">
+    <div class="max-w-container-max mx-auto px-gutter">
+      <!-- Back Link -->
+      <div class="mb-8">
+        <a href="/#servicios" class="inline-flex items-center gap-2 text-primary font-medium hover:text-primary-dark transition-colors font-body-md text-body-md">
+          <span class="material-symbols-outlined text-sm">arrow_back</span>
+          Volver a Servicios
+        </a>
+      </div>
+
+      <!-- Main Columns -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left Column: Details Summary Card -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="bg-white rounded-3xl border border-outline-variant/30 shadow-xl p-8 md:p-12 relative overflow-hidden card-hover">
+            <!-- Decorative Accent line -->
+            <div class="absolute top-0 left-0 w-full h-2 bg-primary"></div>
+            
+            <div class="flex justify-between items-start mb-6">
+              <div>
+                <span id="plan-label" class="inline-block bg-primary-fixed text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
+                  Cargando...
+                </span>
+                <h1 id="plan-name" class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface leading-tight mb-2">
+                  Cargando Plan...
+                </h1>
+                <p id="service-name" class="font-body-lg text-body-lg text-primary font-medium">
+                  Cargando Categoría...
+                </p>
+              </div>
+              <div class="text-right">
+                <p class="text-xs text-outline font-bold uppercase tracking-widest">Precio Estimado</p>
+                <div id="plan-price" class="text-2xl md:text-3xl font-extrabold text-on-surface tracking-tight mt-1">
+                  --
+                </div>
+              </div>
+            </div>
+
+            <p id="plan-desc" class="text-on-surface-variant font-body-md text-body-md leading-relaxed mb-8 border-b border-outline-variant pb-6">
+              Cargando descripción...
+            </p>
+
+            <div>
+              <h3 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">verified</span>
+                ¿Qué incluye este plan?
+              </h3>
+              <ul id="plan-features" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Dynamically populated -->
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Selector & WhatsApp CTA -->
+        <div class="lg:col-span-5 space-y-6">
+          <!-- Selection panel -->
+          <div class="bg-white rounded-3xl border border-outline-variant/30 shadow-lg p-8 space-y-6">
+            <h2 class="font-headline-md text-headline-md text-on-surface">Selecciona otro Plan</h2>
+            
+            <div class="space-y-4">
+              <div class="space-y-2">
+                <label for="service-select" class="text-label-sm font-label-sm text-on-surface-variant block">Servicio</label>
+                <select id="service-select" class="w-full bg-surface-dim border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3 text-body-md font-body-md text-on-surface outline-none transition-shadow">
+                  {Object.entries(plansData).map(([key, service]) => (
+                    <option value={key}>{service.name}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div class="space-y-2">
+                <label for="plan-select" class="text-label-sm font-label-sm text-on-surface-variant block">Plan / Paquete</label>
+                <select id="plan-select" class="w-full bg-surface-dim border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3 text-body-md font-body-md text-on-surface outline-none transition-shadow">
+                  <!-- Dynamically populated -->
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- WhatsApp Card -->
+          <div class="bg-primary-fixed/30 rounded-3xl border border-primary-fixed-dim/40 p-8 space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center text-on-primary shadow-md">
+                <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+              </div>
+              <div>
+                <h3 class="font-headline-md text-headline-md text-on-primary-fixed">¡Comencemos hoy!</h3>
+                <p class="text-xs text-on-primary-fixed/80">Soporte directo 1 a 1 por chat</p>
+              </div>
+            </div>
+
+            <p class="text-on-primary-fixed/90 font-body-md text-body-md leading-relaxed">
+              Haz clic en el botón de abajo para enviarnos un mensaje por WhatsApp con los detalles de este plan. Uno de nuestros asesores te responderá para definir los alcances y dar inicio al proyecto.
+            </p>
+
+            <a id="whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="w-full bg-primary text-on-primary py-5 rounded-2xl font-bold text-center block btn-magnetic press-effect shadow-xl shadow-primary/20">
+              <span class="icon-wrap flex items-center justify-center gap-2">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                  <path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.76.46 3.473 1.336 4.988L2 22l5.174-1.356c1.47.8 3.11 1.222 4.826 1.222 5.506 0 9.988-4.482 9.988-9.988C22 6.482 17.518 2 12.012 2zm0 18.294c-1.49 0-2.95-.4-4.223-1.157l-.303-.18-3.137.822.835-3.056-.197-.314c-.832-1.326-1.272-2.87-1.272-4.47 0-4.526 3.684-8.21 8.21-8.21 4.527 0 8.21 3.684 8.21 8.21 0 4.526-3.684 8.21-8.21 8.21zm4.786-6.522c-.262-.13-1.554-.767-1.793-.853-.24-.087-.414-.13-.588.13-.174.262-.676.853-.83 1.028-.152.173-.304.195-.566.065-.262-.13-1.107-.407-2.11-1.302-.78-.696-1.308-1.555-1.46-1.82-.152-.26-.016-.4-.147-.53-.118-.117-.262-.304-.393-.456-.13-.152-.174-.26-.262-.435-.087-.174-.043-.326-.022-.456.022-.13.174-.413.262-.565.087-.152.11-.26.174-.435.065-.174.032-.326-.01-.456-.044-.13-.415-1.002-.57-1.37-.152-.368-.317-.318-.435-.324-.112-.006-.24-.006-.37-.006-.13 0-.34.048-.518.24-.178.195-.678.662-.678 1.613s.69 1.87 .785 2c.096.13 1.36 2.077 3.293 2.912.46.2.82.32 1.1.41.462.146.88.125 1.212.076.37-.054 1.137-.465 1.298-.913.163-.45.163-.837.114-.913-.047-.077-.173-.12-.434-.25z"/>
+                </svg>
+                Contactar por WhatsApp
+              </span>
+            </a>
+
+            <!-- Next steps -->
+            <div class="border-t border-primary-fixed-dim/30 pt-6">
+              <h4 class="font-label-sm text-label-sm text-on-primary-fixed uppercase tracking-wider mb-4">¿Qué pasa después?</h4>
+              <div class="space-y-3 font-body-md text-body-md text-on-primary-fixed/85">
+                <div class="flex gap-3">
+                  <span class="font-bold text-primary">1.</span>
+                  <p>Coordinamos una videollamada corta o conversamos por chat para entender tus necesidades.</p>
+                </div>
+                <div class="flex gap-3">
+                  <span class="font-bold text-primary">2.</span>
+                  <p>Te enviamos una propuesta formal y cronograma de trabajo detallado.</p>
+                </div>
+                <div class="flex gap-3">
+                  <span class="font-bold text-primary">3.</span>
+                  <p>¡Iniciamos el proyecto y te entregamos avances constantes!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<!-- Client Side Interaction Script -->
+<script define:vars={{ plansData, cleanPhone }}>
+  const serviceSelect = document.getElementById('service-select');
+  const planSelect = document.getElementById('plan-select');
+  
+  const planLabel = document.getElementById('plan-label');
+  const planName = document.getElementById('plan-name');
+  const serviceName = document.getElementById('service-name');
+  const planPrice = document.getElementById('plan-price');
+  const planDesc = document.getElementById('plan-desc');
+  const planFeatures = document.getElementById('plan-features');
+  const whatsappBtn = document.getElementById('whatsapp-btn');
+
+  // Populate Plans Select Dropdown
+  function populatePlans(serviceKey) {
+    planSelect.innerHTML = '';
+    const service = plansData[serviceKey];
+    if (service && service.plans) {
+      Object.entries(service.plans).forEach(([key, plan]) => {
+        const option = document.createElement('option');
+        option.value = key;
+        option.textContent = `${plan.label} - ${plan.name}`;
+        planSelect.appendChild(option);
+      });
+    }
+  }
+
+  // Update Product Details DOM
+  function updateProductView() {
+    const serviceKey = serviceSelect.value;
+    const planKey = planSelect.value;
+    
+    const service = plansData[serviceKey];
+    if (!service) return;
+    
+    const plan = service.plans[planKey];
+    if (!plan) return;
+
+    // Set Text Content
+    planLabel.textContent = plan.label;
+    planName.textContent = plan.name;
+    serviceName.textContent = service.name;
+    planPrice.textContent = plan.price;
+    planDesc.textContent = plan.desc;
+
+    // Set Features
+    planFeatures.innerHTML = '';
+    plan.features.forEach(feature => {
+      const li = document.createElement('li');
+      li.className = 'flex items-start gap-3 text-on-surface-variant font-body-md text-body-md';
+      li.innerHTML = `
+        <span class="material-symbols-outlined text-primary text-sm mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+        <span>${feature}</span>
+      `;
+      planFeatures.appendChild(li);
+    });
+
+    // Update WhatsApp link
+    const textMessage = `¡Hola! Me interesa contratar el plan *${plan.name}* (${plan.label}) del servicio de *${service.name}*. ¿Podrían brindarme más información?`;
+    whatsappBtn.href = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(textMessage)}`;
+  }
+
+  // Set initial state from query params
+  function init() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const serviceParam = urlParams.get('service');
+    const planParam = urlParams.get('plan');
+
+    if (serviceParam && plansData[serviceParam]) {
+      serviceSelect.value = serviceParam;
+      populatePlans(serviceParam);
+      
+      if (planParam && plansData[serviceParam].plans[planParam]) {
+        planSelect.value = planParam;
+      }
+    } else {
+      // Default to first service and its first plan
+      const firstServiceKey = Object.keys(plansData)[0];
+      serviceSelect.value = firstServiceKey;
+      populatePlans(firstServiceKey);
+    }
+    
+    updateProductView();
+  }
+
+  // Event Listeners
+  serviceSelect.addEventListener('change', () => {
+    populatePlans(serviceSelect.value);
+    updateProductView();
+  });
+
+  planSelect.addEventListener('change', () => {
+    updateProductView();
+  });
+
+  // Run on load
+  init();
+</script>
