@@ -1,0 +1,33 @@
+{
+  "title": "Plantilla 1 | Agencia Digital",
+  "heroHeading": "Maximiza el impacto de tu marca con Plantilla 1",
+  "heroParagraph": "Eleva tu presencia digital y estrategias de marketing a un nivel superior con nuestras soluciones integrales diseñadas para el éxito sostenido de tu empresa.",
+  "heroCtaLabel": "Descubrir más",
+  "heroImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuCLnSXflK2O240IsFhJYQzcgOWK_Zwx4hZdbZ4Q_xkoT3BYT3K73sSBWEMvrj6lXjuZhiOpT_3Nh4ZawOCQeJzkmwo8WB9eMbdyDwXrgv63JLYwkx-dCv9Z6dSuu3O1zTUUZPKGxJEoleqwktDtqUUV9UQMTQSQr-G2QTALFux1cKHWik2cPYhadu13u2beZ0gUp5p7EvRqLAJN20nkRqTJoaV1F_p-sZLi8ntAz-zMUEMk0BZCeGOsLTLF_NH3Pr-JOqp3UvaETxWv",
+  "heroImageAlt": "Digital Marketing Laptop",
+  "servicesHeading": "Soluciones digitales para tu crecimiento",
+  "servicesParagraph": "Impulsamos tu negocio en el entorno digital con estrategias personalizadas diseñadas para alcanzar tus objetivos específicos.",
+  "services": [
+    { "icon": "code", "title": "Desarrollo Web", "desc": "Plataformas digitales de alto rendimiento que convierten visitantes en clientes desde el primer clic.", "href": "/servicios/desarrollo-web" },
+    { "icon": "smart_toy", "title": "Agentes de IA", "desc": "Automatiza atención al cliente y cualificación de leads con inteligencia activa las 24 horas.", "href": "/servicios/agentes-ia" },
+    { "icon": "palette", "title": "Diseño Gráfico", "desc": "Identidades visuales que comunican autoridad y generan reconocimiento inmediato en cada punto de contacto.", "href": "/servicios/diseno-grafico" },
+    { "icon": "diversity_3", "title": "Gestión de Redes", "desc": "Estrategia, contenido y comunidad: convertimos tus redes en un canal real de ventas y fidelización.", "href": "/servicios/redes-sociales" },
+    { "icon": "ads_click", "title": "Campañas de Ads", "desc": "Publicidad de precisión en Google y Meta para captar clientes listos para comprar ahora mismo.", "href": "/servicios/campanas-publicitarias" },
+    { "icon": "movie", "title": "Videomarketing", "desc": "Piezas audiovisuales estratégicas que amplifican tu mensaje y disparan el engagement.", "href": "/servicios/videomarketing" },
+    { "icon": "filter_alt", "title": "Embudos de Venta", "desc": "Sistemas de conversión automatizados que guían a tus prospectos hasta la compra con mínima fricción.", "href": "/servicios/embudos-venta" },
+    { "icon": "campaign", "title": "Creadores UGC", "desc": "Conectamos tu marca con creadores reales para campañas auténticas que aumentan conversiones.", "href": "/servicios/creadores-ugc" },
+    { "icon": "history_edu", "title": "Creación de Contenido", "desc": "Contenido estratégico que posiciona tu marca como referente y atrae tráfico cualificado de forma constante.", "href": "/servicios/creacion-contenido" }
+  ],
+  "reasonsHeading": "Por qué elegirnos",
+  "reasons": [
+    { "title": "Amplia Trayectoria", "desc": "Contamos con años de experiencia liderando campañas de marketing exitosas en el sector digital, adaptándonos constantemente a las nuevas tendencias del mercado." },
+    { "title": "Equipo de Especialistas", "desc": "Nuestro equipo está formado por profesionales altamente cualificados en cada área del marketing digital, garantizando excelencia técnica en cada proyecto." },
+    { "title": "Creatividad y Estrategia Innovadora", "desc": "Fomentamos la creatividad y la innovación como pilares fundamentales para diferenciar a tu marca en un entorno digital saturado." },
+    { "title": "Enfoque en Resultados", "desc": "Estamos totalmente comprometidos con tus resultados comerciales, utilizando datos reales para optimizar cada fase de tu estrategia digital." }
+  ],
+  "ctaHeading": "Por qué Plantilla 1 es tu mejor opción",
+  "ctaParagraph": "Nuestro enfoque diferente, basado en la personalización y la innovación constante, nos permite ofrecer soluciones que realmente impactan en el crecimiento de tu negocio.",
+  "ctaLabel": "Empieza ahora",
+  "ctaImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuBtzci1QtmfbUubFYJE_UBdNN2kzW2bYIBjN9nyBvQ7tYyRjqvSMc4p6b0lGlCC2UO-CceR-OUDeYhZ5rfjjVyQ0muUvBm5qjS6ZBn3Tv1nHWDonfspONEYlW7AdcmDvcm_Nc2ac3M-0cd4UNpUfTNXCEXXI-jLWclXiv8Tv-xgMT2f7LtqDSwcPbSjSJPhQHjAkGLbJTgqy2K21Dvls0EIdd5u1gv9DZdCoQyV2roKW-Q_ZcmIkfIBwljZ9GzVXn0lJaZQA2OIP6bx",
+  "ctaImageAlt": "Happy Specialist with Icons"
+}

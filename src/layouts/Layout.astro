@@ -1,12 +1,15 @@
 ---
 import '../styles/global.css';
 import { colors, fonts, logo } from '../config/theme.mjs';
+import site from '../content/settings/site.json';
 export interface Props {
   title: string;
   currentPage?: 'inicio' | 'nosotros' | 'contacto' | 'servicios';
 }
 
 const { title, currentPage = 'inicio' } = Astro.props;
+const { brand, ctaLabel, nav, contact, footerTagline, footerPages, footerLinks, footerBottomLinks, copyright } = site;
+const contactIcons: Record<string, string> = { phone: 'call', email: 'mail', location: 'location_on' };
 
 // --- Tema → variables CSS que consume global.css (única fuente: src/config/theme.mjs) ---
 const hexToRgb = (hex: string) => {
@@ -49,16 +52,18 @@ const rootStyle = ':root{' + Object.entries(cssVars).map(([k, v]) => `${k}:${v}`
 <body class="bg-background text-on-surface font-body-md">
   <header class="bg-primary-container top-0 sticky z-50 transition-all duration-300">
     <nav class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
-      <div class="font-headline-md text-headline-md font-bold" style="color:var(--color-on-surface)">Plantilla 1.</div>
+      <a href="/" class="font-headline-md text-headline-md font-bold flex items-center gap-2" style="color:var(--color-on-surface)">
+        {logo.image && <img src={logo.image} alt={logo.alt} class="h-8 w-auto" />}
+        {brand}
+      </a>
       <div class="hidden md:flex items-center gap-8">
-        <a class="font-body-md text-body-md font-medium transition-colors duration-200 hover:text-primary" href="/">Inicio</a>
-        <a class="font-body-md text-body-md font-medium transition-colors duration-200 hover:text-primary" href="/nosotros">Nosotros</a>
-        <a class="font-body-md text-body-md font-medium transition-colors duration-200 hover:text-primary" href="/#servicios">Servicios</a>
-        <a class="font-body-md text-body-md font-medium transition-colors duration-200 hover:text-primary" href="/contacto">Contacto</a>
+        {nav.map(item => (
+          <a class="font-body-md text-body-md font-medium transition-colors duration-200 hover:text-primary" href={item.href}>{item.label}</a>
+        ))}
       </div>
       <div class="flex items-center gap-3">
         <a href="/contacto" class="hidden md:inline-flex bg-primary text-white font-label-sm text-label-sm px-5 py-2.5 rounded-xl btn-magnetic shadow-md shadow-primary/20">
-          <span class="icon-wrap">Contáctanos</span>
+          <span class="icon-wrap">{ctaLabel}</span>
         </a>
         <button class="md:hidden text-on-surface"><span class="material-symbols-outlined">menu</span></button>
       </div>
@@ -71,9 +76,9 @@ const rootStyle = ':root{' + Object.entries(cssVars).map(([k, v]) => `${k}:${v}`
     <div class="max-w-container-max mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
         <div class="space-y-6">
-          <div class="font-headline-md text-headline-md font-bold" style="color:#ffffff;">Plantilla 1.</div>
+          <div class="font-headline-md text-headline-md font-bold" style="color:#ffffff;">{brand}</div>
           <p class="font-body-md text-body-md" style="color:rgba(255,255,255,0.65);">
-            Soluciones digitales premium para impulsar el crecimiento de tu empresa.
+            {footerTagline}
           </p>
           <div class="flex gap-3">
             <button class="w-10 h-10 rounded-full flex items-center justify-center transition-colors press-effect" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);">
@@ -88,47 +93,40 @@ const rootStyle = ':root{' + Object.entries(cssVars).map(([k, v]) => `${k}:${v}`
         <div class="space-y-6">
           <h5 class="font-label-sm text-label-sm uppercase tracking-widest" style="color:rgba(255,255,255,0.50);">Información de Contacto</h5>
           <ul class="space-y-4 font-body-md text-body-md" style="color:rgba(255,255,255,0.80);">
-            <li class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-[18px]" style="color:rgba(255,255,255,0.55);">call</span>
-              +34 639 494 000
-            </li>
-            <li class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-[18px]" style="color:rgba(255,255,255,0.55);">mail</span>
-              contacto@plantilla1.com
-            </li>
-            <li class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-[18px]" style="color:rgba(255,255,255,0.55);">location_on</span>
-              Madrid, España
-            </li>
+            {Object.entries(contact).map(([key, value]) => (
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-[18px]" style="color:rgba(255,255,255,0.55);">{contactIcons[key] ?? 'circle'}</span>
+                {value}
+              </li>
+            ))}
           </ul>
         </div>
 
         <div class="space-y-6">
           <h5 class="font-label-sm text-label-sm uppercase tracking-widest" style="color:rgba(255,255,255,0.50);">Páginas</h5>
           <ul class="space-y-3 font-body-md text-body-md">
-            <li><a href="/" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Inicio</a></li>
-            <li><a href="/nosotros" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Nosotros</a></li>
-            <li><a href="/#servicios" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Servicios</a></li>
-            <li><a href="/contacto" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Contacto</a></li>
+            {footerPages.map(item => (
+              <li><a href={item.href} style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">{item.label}</a></li>
+            ))}
           </ul>
         </div>
 
         <div class="space-y-6">
           <h5 class="font-label-sm text-label-sm uppercase tracking-widest" style="color:rgba(255,255,255,0.50);">Enlaces Rápidos</h5>
           <ul class="space-y-3 font-body-md text-body-md">
-            <li><a href="#" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Blog</a></li>
-            <li><a href="#" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">FAQ</a></li>
-            <li><a href="#" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Privacidad</a></li>
-            <li><a href="#" style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">Términos</a></li>
+            {footerLinks.map(item => (
+              <li><a href={item.href} style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">{item.label}</a></li>
+            ))}
           </ul>
         </div>
       </div>
 
       <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4" style="border-top:1px solid rgba(255,255,255,0.12);">
-        <p class="font-label-sm text-label-sm" style="color:rgba(255,255,255,0.45);">&copy; 2026 Plantilla 1 | Todos los derechos reservados.</p>
+        <p class="font-label-sm text-label-sm" style="color:rgba(255,255,255,0.45);">{copyright}</p>
         <div class="flex gap-6">
-          <a href="#" class="font-label-sm text-label-sm" style="color:rgba(255,255,255,0.45);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Términos</a>
-          <a href="#" class="font-label-sm text-label-sm" style="color:rgba(255,255,255,0.45);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Soporte</a>
+          {footerBottomLinks.map(item => (
+            <a href={item.href} class="font-label-sm text-label-sm" style="color:rgba(255,255,255,0.45);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">{item.label}</a>
+          ))}
         </div>
       </div>
     </div>

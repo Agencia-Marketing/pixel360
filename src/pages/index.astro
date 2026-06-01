@@ -1,24 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import home from '../content/pages/home.json';
+
+export const prerender = true;
 ---
-<Layout title="Plantilla 1 | Agencia Digital">
+<Layout title={home.title}>
 <section class="bg-primary relative overflow-hidden pt-12 pb-24 md:py-section-padding-desktop">
 <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
 <div class="text-on-primary space-y-8 reveal in-view">
 <h1 class="font-display-hero-mobile text-display-hero-mobile md:font-display-hero md:text-display-hero">
-                    Maximiza el impacto de tu marca con Plantilla 1
+                    {home.heroHeading}
                 </h1>
 <p class="font-body-lg text-body-lg text-on-primary/90 max-w-xl">
-                    Eleva tu presencia digital y estrategias de marketing a un nivel superior con nuestras soluciones integrales diseñadas para el éxito sostenido de tu empresa.
+                    {home.heroParagraph}
                 </p>
 <div>
 <button onclick="document.getElementById('servicios').scrollIntoView({behavior:'smooth'})" class="bg-surface-container-lowest text-primary px-8 py-4 rounded-2xl font-bold font-body-md text-body-md btn-magnetic shadow-xl press-effect">
-                        <span class="icon-wrap">Descubrir más</span>
+                        <span class="icon-wrap">{home.heroCtaLabel}</span>
                     </button>
 </div>
 </div>
 <div class="relative reveal in-view">
-<img alt="Digital Marketing Laptop" class="w-full h-auto object-contain drop-shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLnSXflK2O240IsFhJYQzcgOWK_Zwx4hZdbZ4Q_xkoT3BYT3K73sSBWEMvrj6lXjuZhiOpT_3Nh4ZawOCQeJzkmwo8WB9eMbdyDwXrgv63JLYwkx-dCv9Z6dSuu3O1zTUUZPKGxJEoleqwktDtqUUV9UQMTQSQr-G2QTALFux1cKHWik2cPYhadu13u2beZ0gUp5p7EvRqLAJN20nkRqTJoaV1F_p-sZLi8ntAz-zMUEMk0BZCeGOsLTLF_NH3Pr-JOqp3UvaETxWv">
+<img alt={home.heroImageAlt} class="w-full h-auto object-contain drop-shadow-2xl" src={home.heroImage}>
 </div>
 </div>
 <div class="absolute -top-24 -right-24 w-96 h-96 bg-white/[0.06] rounded-full" style="filter:blur(80px)"></div>
@@ -27,153 +30,43 @@ import Layout from '../layouts/Layout.astro';
 <section class="bg-surface py-section-padding-mobile md:py-section-padding-desktop" id="servicios">
 <div class="max-w-container-max mx-auto px-gutter">
 <div class="text-center mb-16 space-y-4 reveal">
-<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface">Soluciones digitales para tu crecimiento</h2>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface">{home.servicesHeading}</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-                    Impulsamos tu negocio en el entorno digital con estrategias personalizadas diseñadas para alcanzar tus objetivos específicos.
+                    {home.servicesParagraph}
                 </p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {home.services.map(s => (
             <div class="bg-white p-8 rounded-2xl border border-outline-variant/30 hover:border-primary/50 transition-all group flex flex-col h-full shadow-sm card-hover stagger-fade">
                 <div class="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center text-primary mb-6">
-                    <span class="material-symbols-outlined">code</span>
+                    <span class="material-symbols-outlined">{s.icon}</span>
                 </div>
-                <h3 class="font-headline-md text-headline-md mb-4">Desarrollo Web</h3>
+                <h3 class="font-headline-md text-headline-md mb-4">{s.title}</h3>
                 <p class="text-on-surface-variant font-body-md text-body-md mb-8 flex-grow">
-                    Construimos plataformas a medida que son rápidas, adaptables y optimizadas para convertir visitas en clientes reales.
+                    {s.desc}
                 </p>
-                <a href="/servicios/desarrollo-web" class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold text-center block btn-magnetic press-effect shadow-md shadow-primary/20">
+                <a href={s.href} class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold text-center block btn-magnetic press-effect shadow-md shadow-primary/20">
                     + Info
                 </a>
             </div>
-            <div class="bg-white p-8 rounded-2xl border border-outline-variant/30 hover:border-primary/50 transition-all group flex flex-col h-full shadow-sm card-hover stagger-fade">
-                <div class="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center text-primary mb-6">
-                    <span class="material-symbols-outlined">smart_toy</span>
-                </div>
-                <h3 class="font-headline-md text-headline-md mb-4">Agentes de IA</h3>
-                <p class="text-on-surface-variant font-body-md text-body-md mb-8 flex-grow">
-                    Implementamos agentes inteligentes de IA para automatizar tus procesos de atención y aumentar tus ventas 24/7.
-                </p>
-                <a href="/servicios/agentes-ia" class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold text-center block btn-magnetic press-effect shadow-md shadow-primary/20">
-                    + Info
-                </a>
-            </div>
-            <div class="bg-white p-8 rounded-2xl border border-outline-variant/30 hover:border-primary/50 transition-all group flex flex-col h-full shadow-sm card-hover stagger-fade">
-                <div class="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center text-primary mb-6">
-                    <span class="material-symbols-outlined">palette</span>
-                </div>
-                <h3 class="font-headline-md text-headline-md mb-4">Diseño Gráfico</h3>
-                <p class="text-on-surface-variant font-body-md text-body-md mb-8 flex-grow">
-                    Potenciamos tu marca y generamos una impresión duradera con creaciones visuales atractivas y de nivel premium.
-                </p>
-                <a href="/servicios/diseno-grafico" class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold text-center block btn-magnetic press-effect shadow-md shadow-primary/20">
-                    + Info
-                </a>
-            </div>
-            <div class="bg-white p-8 rounded-2xl border border-outline-variant/30 hover:border-primary/50 transition-all group flex flex-col h-full shadow-sm card-hover stagger-fade">
-                <div class="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center text-primary mb-6">
-                    <span class="material-symbols-outlined">diversity_3</span>
-                </div>
-                <h3 class="font-headline-md text-headline-md mb-4">Gestión de Redes</h3>
-                <p class="text-on-surface-variant font-body-md text-body-md mb-8 flex-grow">
-                    Incrementa la interacción con tu audiencia y la notoriedad de tu marca mediante una gestión experta y estratégica.
-                </p>
-                <a href="/servicios/redes-sociales" class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold text-center block btn-magnetic press-effect shadow-md shadow-primary/20">
-                    + Info
-                </a>
-            </div>
-            <div class="bg-white p-8 rounded-2xl border border-outline-variant/30 hover:border-primary/50 transition-all group flex flex-col h-full shadow-sm card-hover stagger-fade">
-                <div class="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center text-primary mb-6">
-                    <span class="material-symbols-outlined">ads_click</span>
-                </div>
-                <h3 class="font-headline-md text-headline-md mb-4">Campañas de Ads</h3>
-                <p class="text-on-surface-variant font-body-md text-body-md mb-8 flex-grow">
-                    Aumenta tu visibilidad y capta clientes calificados con campañas publicitarias optimizadas de alto rendimiento.
-                </p>
-                <a href="/servicios/campanas-publicitarias" class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold text-center block btn-magnetic press-effect shadow-md shadow-primary/20">
-                    + Info
-                </a>
-            </div>
-            <div class="bg-white p-8 rounded-2xl border border-outline-variant/30 hover:border-primary/50 transition-all group flex flex-col h-full shadow-sm card-hover stagger-fade">
-                <div class="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center text-primary mb-6">
-                    <span class="material-symbols-outlined">movie</span>
-                </div>
-                <h3 class="font-headline-md text-headline-md mb-4">Videomarketing</h3>
-                <p class="text-on-surface-variant font-body-md text-body-md mb-8 flex-grow">
-                    Producimos piezas audiovisuales dinámicas y profesionales que conectan emocionalmente con tu público objetivo.
-                </p>
-                <a href="/servicios/videomarketing" class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold text-center block btn-magnetic press-effect shadow-md shadow-primary/20">
-                    + Info
-                </a>
-            </div>
-            <div class="bg-white p-8 rounded-2xl border border-outline-variant/30 hover:border-primary/50 transition-all group flex flex-col h-full shadow-sm card-hover stagger-fade">
-                <div class="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center text-primary mb-6">
-                    <span class="material-symbols-outlined">filter_alt</span>
-                </div>
-                <h3 class="font-headline-md text-headline-md mb-4">Embudos de Venta</h3>
-                <p class="text-on-surface-variant font-body-md text-body-md mb-8 flex-grow">
-                    Diseñamos sistemas automatizados de ventas para llevar a tus prospectos paso a paso hasta la conversión final.
-                </p>
-                <a href="/servicios/embudos-venta" class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold text-center block btn-magnetic press-effect shadow-md shadow-primary/20">
-                    + Info
-                </a>
-            </div>
-            <div class="bg-white p-8 rounded-2xl border border-outline-variant/30 hover:border-primary/50 transition-all group flex flex-col h-full shadow-sm card-hover stagger-fade">
-                <div class="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center text-primary mb-6">
-                    <span class="material-symbols-outlined">campaign</span>
-                </div>
-                <h3 class="font-headline-md text-headline-md mb-4">Creadores UGC</h3>
-                <p class="text-on-surface-variant font-body-md text-body-md mb-8 flex-grow">
-                    Conectamos tu marca con creadores de contenido generado por usuarios para campañas auténticas que generan confianza.
-                </p>
-                <a href="/servicios/creadores-ugc" class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold text-center block btn-magnetic press-effect shadow-md shadow-primary/20">
-                    + Info
-                </a>
-            </div>
-            <div class="bg-white p-8 rounded-2xl border border-outline-variant/30 hover:border-primary/50 transition-all group flex flex-col h-full shadow-sm card-hover stagger-fade">
-                <div class="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center text-primary mb-6">
-                    <span class="material-symbols-outlined">history_edu</span>
-                </div>
-                <h3 class="font-headline-md text-headline-md mb-4">Creación de Contenido</h3>
-                <p class="text-on-surface-variant font-body-md text-body-md mb-8 flex-grow">
-                    Diseñamos y redactamos contenidos atractivos para educar, captar interés y posicionar tu marca en la industria.
-                </p>
-                <a href="/servicios/creacion-contenido" class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold text-center block btn-magnetic press-effect shadow-md shadow-primary/20">
-                    + Info
-                </a>
-            </div>
+            ))}
         </div>
 </div>
 </section>
 <section class="bg-primary py-section-padding-mobile md:py-section-padding-desktop">
 <div class="max-w-container-max mx-auto px-gutter">
 <div class="text-center mb-16 space-y-4">
-<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-primary">Por qué elegirnos</h2>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-primary">{home.reasonsHeading}</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/20">
+{home.reasons.map(r => (
 <div class="p-12 glass-card">
-<span class="font-headline-md text-headline-md text-on-primary mb-4 block">Amplia Trayectoria</span>
+<span class="font-headline-md text-headline-md text-on-primary mb-4 block">{r.title}</span>
 <p class="text-on-primary/70 font-body-md text-body-md">
-                        Contamos con años de experiencia liderando campañas de marketing exitosas en el sector digital, adaptándonos constantemente a las nuevas tendencias del mercado.
+                        {r.desc}
                     </p>
 </div>
-<div class="p-12 glass-card">
-<span class="font-headline-md text-headline-md text-on-primary mb-4 block">Equipo de Especialistas</span>
-<p class="text-on-primary/70 font-body-md text-body-md">
-                        Nuestro equipo está formado por profesionales altamente cualificados en cada área del marketing digital, garantizando excelencia técnica en cada proyecto.
-                    </p>
-</div>
-<div class="p-12 glass-card">
-<span class="font-headline-md text-headline-md text-on-primary mb-4 block">Creatividad y Estrategia Innovadora</span>
-<p class="text-on-primary/70 font-body-md text-body-md">
-                        Fomentamos la creatividad y la innovación como pilares fundamentales para diferenciar a tu marca en un entorno digital saturado.
-                    </p>
-</div>
-<div class="p-12 glass-card">
-<span class="font-headline-md text-headline-md text-on-primary mb-4 block">Enfoque en Resultados</span>
-<p class="text-on-primary/70 font-body-md text-body-md">
-                        Estamos totalmente comprometidos con tus resultados comerciales, utilizando datos reales para optimizar cada fase de tu estrategia digital.
-                    </p>
-</div>
+))}
 </div>
 </div>
 </section>
@@ -181,16 +74,16 @@ import Layout from '../layouts/Layout.astro';
 <div class="max-w-container-max mx-auto px-gutter">
 <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-outline-variant/30 grid grid-cols-1 md:grid-cols-2 items-center">
 <div class="p-12 md:p-20 space-y-8">
-<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface">Por qué Plantilla 1 es tu mejor opción</h2>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface">{home.ctaHeading}</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant">
-                        Nuestro enfoque diferente, basado en la personalización y la innovación constante, nos permite ofrecer soluciones que realmente impactan en el crecimiento de tu negocio.
+                        {home.ctaParagraph}
                     </p>
 <button onclick="window.location.href='/contacto'" class="bg-primary text-on-primary px-10 py-4 rounded-2xl font-bold btn-magnetic press-effect shadow-md shadow-primary/20">
-                        <span class="icon-wrap">Empieza ahora</span>
+                        <span class="icon-wrap">{home.ctaLabel}</span>
                     </button>
 </div>
 <div class="h-full">
-<img alt="Happy Specialist with Icons" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtzci1QtmfbUubFYJE_UBdNN2kzW2bYIBjN9nyBvQ7tYyRjqvSMc4p6b0lGlCC2UO-CceR-OUDeYhZ5rfjjVyQ0muUvBm5qjS6ZBn3Tv1nHWDonfspONEYlW7AdcmDvcm_Nc2ac3M-0cd4UNpUfTNXCEXXI-jLWclXiv8Tv-xgMT2f7LtqDSwcPbSjSJPhQHjAkGLbJTgqy2K21Dvls0EIdd5u1gv9DZdCoQyV2roKW-Q_ZcmIkfIBwljZ9GzVXn0lJaZQA2OIP6bx">
+<img alt={home.ctaImageAlt} class="w-full h-full object-cover" src={home.ctaImage}>
 </div>
 </div>
 </div>

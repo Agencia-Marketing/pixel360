@@ -1,0 +1,33 @@
+{
+  "brand": "Plantilla 1.",
+  "ctaLabel": "Contáctanos",
+  "nav": [
+    { "label": "Inicio", "href": "/" },
+    { "label": "Nosotros", "href": "/nosotros" },
+    { "label": "Servicios", "href": "/#servicios" },
+    { "label": "Contacto", "href": "/contacto" }
+  ],
+  "contact": {
+    "phone": "+34 639 494 000",
+    "email": "contacto@plantilla1.com",
+    "location": "Madrid, España"
+  },
+  "footerTagline": "Soluciones digitales premium para impulsar el crecimiento de tu empresa.",
+  "footerPages": [
+    { "label": "Inicio", "href": "/" },
+    { "label": "Nosotros", "href": "/nosotros" },
+    { "label": "Servicios", "href": "/#servicios" },
+    { "label": "Contacto", "href": "/contacto" }
+  ],
+  "footerLinks": [
+    { "label": "Blog", "href": "#" },
+    { "label": "FAQ", "href": "#" },
+    { "label": "Privacidad", "href": "#" },
+    { "label": "Términos", "href": "#" }
+  ],
+  "footerBottomLinks": [
+    { "label": "Términos", "href": "#" },
+    { "label": "Soporte", "href": "#" }
+  ],
+  "copyright": "© 2026 Plantilla 1 | Todos los derechos reservados."
+}

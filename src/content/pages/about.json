@@ -1,0 +1,34 @@
+{
+  "title": "Nosotros | Plantilla 1",
+  "heroHeading": "Impulsamos el crecimiento de tu marca trabajando en equipo.",
+  "heroParagraph": "Nuestro compromiso es ir más allá de tus metas, forjando alianzas duraderas cimentadas en la transparencia y los triunfos mutuos.",
+  "heroCtaPrimary": { "label": "Nuestra Historia", "href": "#esencia" },
+  "heroCtaSecondary": { "label": "Servicios", "href": "/#servicios" },
+  "heroImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuCQhPEMMIcG4hW_a1hwRUCZbB6U011aYxBNG6rY_Wlm0kLNNxgNBuaZQK2W43MWAdxsIFeJYhACgabnvUUnSsyWL0-nrqiRYX2Ui3MSA7xgEzpBZHaT4sd-QmisarvyAZlU2UxGFMFBb0PDkw8MM7YodinZHkhpF331gfHKMEFT9A2srJO4QsyiX8AnamTwk_Nosqrz92z1UgUOYnS-ROZWMOxxq6yoWgqVdA6u-bhcgrsZ9lnBT24GjhIJG-iVejSSjbOq7wFHksbI",
+  "heroImageAlt": "Equipo trabajando",
+  "esenciaTag": "Nuestra Esencia",
+  "esenciaHeading": "El motor que impulsa nuestra agencia",
+  "esenciaParagraph": "Vivimos para detonar el máximo rendimiento de tu negocio en internet. No somos solo una agencia, somos tu socio estratégico. Entendemos que cada clic cuenta y cada interacción es una oportunidad para brillar. Nuestra metodología combina datos rigurosos con una creatividad desbordante para asegurar que tu marca no solo sea vista, sino recordada.",
+  "esenciaCtaLabel": "Hablemos de tu proyecto",
+  "esenciaImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuDwKFIrrQy6l4HevDOlZIakGLDpej8j1gVs_wOQVLKp8w_lk2pi7YnE68Oq-hxvmfYm28agDkMRbfQJ3Q7jCgPVoIKgUdrtba4HL6PPxLTgvBDCfuLbpunBVDd_c3BvK_Em21m4HiCEjARo-2WSyFqw7IG0v-CpFOhUXlwNVkMgs42cs2w1XnaIs0yQHu_xYsObjOOjyGKoaNORKPRpfZPDwqIU0k8vV6V0yB7wgFNWwk2PiKq8k49uEFvAu7hONvLa6KlVkxayUGHO",
+  "esenciaImageAlt": "Liderazgo creativo",
+  "esenciaBadgeValue": "10+",
+  "esenciaBadgeLabel": "Años transformando marcas digitales",
+  "quienesHeading": "Quiénes Somos",
+  "quienesParagraph": "Nuestra misión es maximizar tu presencia online de forma contundente. Creemos en el poder de las ideas bien ejecutadas y en la tecnología como facilitador del crecimiento humano. Nuestra agencia nació de la necesidad de ofrecer soluciones digitales que realmente muevan la aguja del éxito empresarial, sin complicaciones y con total transparencia.",
+  "stats": [
+    { "value": "500+", "label": "Proyectos" },
+    { "value": "98%", "label": "Retención" },
+    { "value": "24/7", "label": "Soporte" },
+    { "value": "15", "label": "Países" }
+  ],
+  "teamHeading": "Conoce a nuestros expertos",
+  "teamQuote": "El talento gana partidos, pero el trabajo en equipo y la inteligencia ganan campeonatos.",
+  "teamCtaLabel": "Agenda una cita",
+  "team": [
+    { "name": "Alex Rivera", "role": "Director Creativo", "img": "https://i.pravatar.cc/400?img=1" },
+    { "name": "Elena Gómez", "role": "Estratega SEO", "img": "https://i.pravatar.cc/400?img=5" },
+    { "name": "Marc Costa", "role": "Lead Developer", "img": "https://i.pravatar.cc/400?img=8" },
+    { "name": "Sofía Méndez", "role": "Growth Manager", "img": "https://i.pravatar.cc/400?img=11" }
+  ]
+}

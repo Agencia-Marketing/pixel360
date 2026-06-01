@@ -1,53 +1,56 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import about from '../content/pages/about.json';
+
+export const prerender = true;
 ---
-<Layout title="Nosotros | Plantilla 1">
+<Layout title={about.title} currentPage="nosotros">
 <section class="bg-primary py-section-padding-mobile md:py-section-padding-desktop">
 <div class="max-w-container-max mx-auto px-base md:px-gutter grid md:grid-cols-2 gap-gutter items-center">
 <div class="text-on-primary reveal">
 <h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero mb-6">
-                    Impulsamos el crecimiento de tu marca trabajando en equipo.
+                    {about.heroHeading}
                 </h1>
 <p class="font-body-lg text-body-lg opacity-90 max-w-xl mb-10">
-                    Nuestro compromiso es ir más allá de tus metas, forjando alianzas duraderas cimentadas en la transparencia y los triunfos mutuos.
+                    {about.heroParagraph}
                 </p>
 <div class="flex gap-4">
-<button class="bg-on-primary text-primary font-label-sm text-label-sm px-8 py-4 rounded-full font-bold btn-magnetic press-effect">
-                        <span class="icon-wrap">Nuestra Historia</span>
-                    </button>
-<button class="border-2 border-on-primary text-on-primary font-label-sm text-label-sm px-8 py-4 rounded-full font-bold hover:bg-on-primary hover:text-primary transition-all btn-magnetic">
-                        <span class="icon-wrap">Servicios</span>
-                    </button>
+<a href={about.heroCtaPrimary.href} class="bg-on-primary text-primary font-label-sm text-label-sm px-8 py-4 rounded-full font-bold btn-magnetic press-effect inline-flex">
+                        <span class="icon-wrap">{about.heroCtaPrimary.label}</span>
+                    </a>
+<a href={about.heroCtaSecondary.href} class="border-2 border-on-primary text-on-primary font-label-sm text-label-sm px-8 py-4 rounded-full font-bold hover:bg-on-primary hover:text-primary transition-all btn-magnetic inline-flex">
+                        <span class="icon-wrap">{about.heroCtaSecondary.label}</span>
+                    </a>
 </div>
 </div>
 <div class="relative mt-12 md:mt-0 reveal">
 <div class="absolute -inset-4 bg-white/10 rounded-card blur-2xl"></div>
-<img alt="Equipo trabajando" class="relative z-10 w-full rounded-card shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQhPEMMIcG4hW_a1hwRUCZbB6U011aYxBNG6rY_Wlm0kLNNxgNBuaZQK2W43MWAdxsIFeJYhACgabnvUUnSsyWL0-nrqiRYX2Ui3MSA7xgEzpBZHaT4sd-QmisarvyAZlU2UxGFMFBb0PDkw8MM7YodinZHkhpF331gfHKMEFT9A2srJO4QsyiX8AnamTwk_Nosqrz92z1UgUOYnS-ROZWMOxxq6yoWgqVdA6u-bhcgrsZ9lnBT24GjhIJG-iVejSSjbOq7wFHksbI">
+<img alt={about.heroImageAlt} class="relative z-10 w-full rounded-card shadow-2xl" src={about.heroImage}>
 </div>
 </div>
 </section>
-<section class="bg-surface-container-low py-section-padding-mobile md:py-section-padding-desktop overflow-hidden">
+<section id="esencia" class="bg-surface-container-low py-section-padding-mobile md:py-section-padding-desktop overflow-hidden">
 <div class="max-w-container-max mx-auto px-base md:px-gutter grid lg:grid-cols-12 gap-12 items-center">
 <div class="lg:col-span-5 relative reveal">
-<img alt="Liderazgo creativo" class="w-full h-auto rounded-card shadow-xl border-4 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwKFIrrQy6l4HevDOlZIakGLDpej8j1gVs_wOQVLKp8w_lk2pi7YnE68Oq-hxvmfYm28agDkMRbfQJ3Q7jCgPVoIKgUdrtba4HL6PPxLTgvBDCfuLbpunBVDd_c3BvK_Em21m4HiCEjARo-2WSyFqw7IG0v-CpFOhUXlwNVkMgs42cs2w1XnaIs0yQHu_xYsObjOOjyGKoaNORKPRpfZPDwqIU0k8vV6V0yB7wgFNWwk2PiKq8k49uEFvAu7hONvLa6KlVkxayUGHO">
+<img alt={about.esenciaImageAlt} class="w-full h-auto rounded-card shadow-xl border-4 border-white" src={about.esenciaImage}>
 <div class="absolute -bottom-10 -right-10 hidden md:block">
 <div class="bg-primary text-on-primary p-8 rounded-card shadow-lg max-w-[240px]">
-<span class="font-display-hero-mobile text-display-hero-mobile block">10+</span>
-<span class="font-body-md text-body-md">Años transformando marcas digitales</span>
+<span class="font-display-hero-mobile text-display-hero-mobile block">{about.esenciaBadgeValue}</span>
+<span class="font-body-md text-body-md">{about.esenciaBadgeLabel}</span>
 </div>
 </div>
 </div>
 <div class="lg:col-span-7 reveal">
-<span class="text-primary font-label-sm text-label-sm uppercase tracking-widest mb-4 block">Nuestra Esencia</span>
+<span class="text-primary font-label-sm text-label-sm uppercase tracking-widest mb-4 block">{about.esenciaTag}</span>
 <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-8">
-                    El motor que impulsa nuestra agencia
+                    {about.esenciaHeading}
                 </h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 leading-relaxed">
-                    Vivimos para detonar el máximo rendimiento de tu negocio en internet. No somos solo una agencia, somos tu socio estratégico. Entendemos que cada clic cuenta y cada interacción es una oportunidad para brillar. Nuestra metodología combina datos rigurosos con una creatividad desbordante para asegurar que tu marca no solo sea vista, sino recordada.
+                    {about.esenciaParagraph}
                 </p>
-<button class="bg-primary text-on-primary font-label-sm text-label-sm px-10 py-5 rounded-full btn-magnetic press-effect shadow-md shadow-primary/20">
-                    <span class="icon-wrap">Hablemos de tu proyecto</span>
-                </button>
+<a href="/contacto" class="bg-primary text-on-primary font-label-sm text-label-sm px-10 py-5 rounded-full btn-magnetic press-effect shadow-md shadow-primary/20 inline-flex">
+                    <span class="icon-wrap">{about.esenciaCtaLabel}</span>
+                </a>
 </div>
 </div>
 </section>
@@ -55,28 +58,18 @@ import Layout from '../layouts/Layout.astro';
 <div class="max-w-3xl mx-auto px-base md:px-gutter text-center">
 <div class="w-16 h-1 bg-primary mx-auto mb-10"></div>
 <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-8">
-                Quiénes Somos
+                {about.quienesHeading}
             </h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-8">
-                Nuestra misión es maximizar tu presencia online de forma contundente. Creemos en el poder de las ideas bien ejecutadas y en la tecnología como facilitador del crecimiento humano. VibrantAgency nació de la necesidad de ofrecer soluciones digitales que realmente muevan la aguja del éxito empresarial, sin complicaciones y con total transparencia.
+                {about.quienesParagraph}
             </p>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+{about.stats.map(s => (
 <div>
-<div class="text-primary font-bold text-headline-md font-headline-md mb-2">500+</div>
-<div class="text-on-surface-variant font-label-sm text-label-sm uppercase">Proyectos</div>
+<div class="text-primary font-bold text-headline-md font-headline-md mb-2">{s.value}</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm uppercase">{s.label}</div>
 </div>
-<div>
-<div class="text-primary font-bold text-headline-md font-headline-md mb-2">98%</div>
-<div class="text-on-surface-variant font-label-sm text-label-sm uppercase">Retención</div>
-</div>
-<div>
-<div class="text-primary font-bold text-headline-md font-headline-md mb-2">24/7</div>
-<div class="text-on-surface-variant font-label-sm text-label-sm uppercase">Soporte</div>
-</div>
-<div>
-<div class="text-primary font-bold text-headline-md font-headline-md mb-2">15</div>
-<div class="text-on-surface-variant font-label-sm text-label-sm uppercase">Países</div>
-</div>
+))}
 </div>
 </div>
 </section>
@@ -85,45 +78,26 @@ import Layout from '../layouts/Layout.astro';
 <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
 <div class="max-w-2xl">
 <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-4">
-                        Conoce a nuestros expertos
+                        {about.teamHeading}
                     </h2>
 <p class="font-body-lg text-body-lg italic text-primary">
-                        El talento gana partidos, pero el trabajo en equipo y la inteligencia ganan campeonatos.
+                        {about.teamQuote}
                     </p>
 </div>
-<button class="bg-primary text-on-primary font-label-sm text-label-sm px-8 py-4 rounded-full font-bold btn-magnetic press-effect shadow-md shadow-primary/20 whitespace-nowrap">
-                    <span class="icon-wrap">Agenda una cita</span>
-                </button>
+<a href="/contacto" class="bg-primary text-on-primary font-label-sm text-label-sm px-8 py-4 rounded-full font-bold btn-magnetic press-effect shadow-md shadow-primary/20 whitespace-nowrap inline-flex">
+                    <span class="icon-wrap">{about.teamCtaLabel}</span>
+                </a>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+{about.team.map(m => (
 <div class="group cursor-pointer stagger-fade">
 <div class="overflow-hidden rounded-card mb-4 bg-on-surface aspect-square">
-<img alt="Alex Rivera" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw68RandWuA-Cm66imlHO-2YaWcYkyGI0n__B4_S0gAi0BT9TZlemaiVNzbqp7ZnAtuiNhTc1WWoidxFicwQzbSRsr89x0zScYYenAWvffaK-8hyCxkJ-KrK7evS0H4ppjC-sokzLd51aYZCAND9vZyT2isoWP-HIPjO-l815HFdkD6RFfB7eTk4xHmxIYOaFZs0SzkKD4y3RF-YA_yvjJalYx9w6JeDn5hyQqMJmJZh5tSU-ey2ZltKzF7vgY__uxG8SKks2sRaFI">
+<img alt={m.name} class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src={m.img}>
 </div>
-<h3 class="font-headline-md text-headline-md text-on-surface">Alex Rivera</h3>
-<p class="text-primary font-body-md text-body-md">Director Creativo</p>
+<h3 class="font-headline-md text-headline-md text-on-surface">{m.name}</h3>
+<p class="text-primary font-body-md text-body-md">{m.role}</p>
 </div>
-<div class="group cursor-pointer stagger-fade">
-<div class="overflow-hidden rounded-card mb-4 bg-on-surface aspect-square">
-<img alt="Elena Gómez" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw68RandWuA-Cm66imlHO-2YaWcYkyGI0n__B4_S0gAi0BT9TZlemaiVNzbqp7ZnAtuiNhTc1WWoidxFicwQzbSRsr89x0zScYYenAWvffaK-8hyCxkJ-KrK7evS0H4ppjC-sokzLd51aYZCAND9vZyT2isoWP-HIPjO-l815HFdkD6RFfB7eTk4xHmxIYOaFZs0SzkKD4y3RF-YA_yvjJalYx9w6JeDn5hyQqMJmJZh5tSU-ey2ZltKzF7vgY__uxG8SKks2sRaFI">
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface">Elena Gómez</h3>
-<p class="text-primary font-body-md text-body-md">Estratega SEO</p>
-</div>
-<div class="group cursor-pointer stagger-fade">
-<div class="overflow-hidden rounded-card mb-4 bg-on-surface aspect-square">
-<img alt="Marc Costa" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw68RandWuA-Cm66imlHO-2YaWcYkyGI0n__B4_S0gAi0BT9TZlemaiVNzbqp7ZnAtuiNhTc1WWoidxFicwQzbSRsr89x0zScYYenAWvffaK-8hyCxkJ-KrK7evS0H4ppjC-sokzLd51aYZCAND9vZyT2isoWP-HIPjO-l815HFdkD6RFfB7eTk4xHmxIYOaFZs0SzkKD4y3RF-YA_yvjJalYx9w6JeDn5hyQqMJmJZh5tSU-ey2ZltKzF7vgY__uxG8SKks2sRaFI">
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface">Marc Costa</h3>
-<p class="text-primary font-body-md text-body-md">Lead Developer</p>
-</div>
-<div class="group cursor-pointer stagger-fade">
-<div class="overflow-hidden rounded-card mb-4 bg-on-surface aspect-square">
-<img alt="Sofía Méndez" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw68RandWuA-Cm66imlHO-2YaWcYkyGI0n__B4_S0gAi0BT9TZlemaiVNzbqp7ZnAtuiNhTc1WWoidxFicwQzbSRsr89x0zScYYenAWvffaK-8hyCxkJ-KrK7evS0H4ppjC-sokzLd51aYZCAND9vZyT2isoWP-HIPjO-l815HFdkD6RFfB7eTk4xHmxIYOaFZs0SzkKD4y3RF-YA_yvjJalYx9w6JeDn5hyQqMJmJZh5tSU-ey2ZltKzF7vgY__uxG8SKks2sRaFI">
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface">Sofía Méndez</h3>
-<p class="text-primary font-body-md text-body-md">Growth Manager</p>
-</div>
+))}
 </div>
 </div>
 </section>
