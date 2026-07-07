@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { colors, fonts, logo } from '../config/theme.mjs';
 import site from '../content/settings/site.json';
+import plans from '../content/settings/plans.json';
 export interface Props {
   title: string;
   currentPage?: 'inicio' | 'nosotros' | 'contacto' | 'servicios';
@@ -9,6 +10,7 @@ export interface Props {
 
 const { title, currentPage = 'inicio' } = Astro.props;
 const { brand, ctaLabel, nav, contact, footerTagline, footerPages, footerBottomLinks, copyright } = site;
+const services = Object.entries(plans).map(([slug, s]) => ({ label: s.name, href: `/servicios/${slug}` }));
 const contactIcons: Record<string, string> = { phone: 'call', email: 'mail', location: 'location_on' };
 
 // --- Tema → variables CSS que consume global.css (única fuente: src/config/theme.mjs) ---
@@ -59,7 +61,23 @@ const rootStyle = ':root{' + Object.entries(cssVars).map(([k, v]) => `${k}:${v}`
       </a>
       <div class="hidden md:flex items-center gap-8">
         {nav.map(item => (
-          <a class="font-body-md text-body-md font-medium transition-colors duration-200 hover:text-primary" href={item.href}>{item.label}</a>
+          item.dropdown ? (
+            <div class="relative group">
+              <a href={item.href} class="flex items-center gap-1 font-body-md text-body-md font-medium transition-colors duration-200 hover:text-primary">
+                {item.label}
+                <span class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
+              </a>
+              <div class="absolute left-1/2 -translate-x-1/2 top-full pt-4 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 transition-all duration-200 z-50">
+                <div class="bg-surface rounded-2xl shadow-xl border border-outline-variant/40 p-2 w-64">
+                  {services.map(s => (
+                    <a href={s.href} class="block px-4 py-2.5 rounded-xl font-body-md text-body-md text-on-surface hover:bg-primary-fixed hover:text-primary transition-colors">{s.label}</a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <a class="font-body-md text-body-md font-medium transition-colors duration-200 hover:text-primary" href={item.href}>{item.label}</a>
+          )
         ))}
       </div>
       <div class="flex items-center gap-3">
