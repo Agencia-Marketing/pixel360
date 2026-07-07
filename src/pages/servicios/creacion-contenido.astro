@@ -1,17 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 ---
-<Layout title="Creación de Contenido | Plantilla 1">
-<section class="relative pt-32 pb-20 md:pt-48 md:pb-32 bg-primary-container overflow-hidden">
-<div class="max-w-container-max mx-auto px-gutter relative z-10 text-center">
-<h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-on-primary mb-6">
+<Layout title="Creación de Contenido | Pixel 360">
+<section class="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-primary overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+<div class="space-y-6">
+<h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-on-primary">
                 CREACIÓN DE CONTENIDO
             </h1>
-<p class="max-w-3xl mx-auto font-body-lg text-body-lg text-on-primary-container/90 mb-12">
+<p class="font-body-lg text-body-lg text-on-primary/90 max-w-xl">
                 Despierta la creatividad de tu negocio con piezas visuales diseñadas para captar la atención de tu audiencia y elevar el valor de tu marca.
             </p>
-<div class="relative w-full max-w-4xl mx-auto mt-12 transform hover:scale-[1.02] transition-transform duration-700">
-<img alt="Content Creation Visual" class="w-full rounded-2xl shadow-2xl border border-on-primary-container/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi3HyL4CFp_FZExC_kzlNCA6qGuLRiIopI9ejP3t1eBTAM7e_CyZmVE5ZEP8csPCh1guMUBMElJ4sSaMhyV_jL23X97tPIFTD9x9pf0lHUHVdmrM_LnhI4FX1Sd3l-MyUOJxnM8m-pB7CjXayOIuYICu5rJhJ34-J2zKKAgAaAUuLd4ruS1dtvwEoTekUs5sbNYQMesIH6rbtUloVB0pt3NaNczMeXy2QPihenaGhLJBD3QBHaIsZhuLcDKvY20RzRaA4I_3PIvFZe"/>
+</div>
+<div class="relative">
+<img alt="Content Creation Visual" class="w-full rounded-2xl shadow-2xl border border-white/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi3HyL4CFp_FZExC_kzlNCA6qGuLRiIopI9ejP3t1eBTAM7e_CyZmVE5ZEP8csPCh1guMUBMElJ4sSaMhyV_jL23X97tPIFTD9x9pf0lHUHVdmrM_LnhI4FX1Sd3l-MyUOJxnM8m-pB7CjXayOIuYICu5rJhJ34-J2zKKAgAaAUuLd4ruS1dtvwEoTekUs5sbNYQMesIH6rbtUloVB0pt3NaNczMeXy2QPihenaGhLJBD3QBHaIsZhuLcDKvY20RzRaA4I_3PIvFZe"/>
 </div>
 </div>
 <div class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
@@ -59,7 +61,7 @@ import Layout from '../../layouts/Layout.astro';
 </div>
 </div>
 <h3 class="font-headline-md text-headline-md text-center mb-2">Diseño Individual</h3>
-<div class="text-center font-display-hero text-headline-lg text-primary mb-6">$245</div>
+<div class="text-center font-display-hero text-headline-lg text-primary mb-6">$12 <span class="text-lg font-normal text-on-surface-variant">USD</span></div>
 <ul class="space-y-4 mb-8 flex-grow">
 <li class="flex items-start gap-2 text-on-surface-variant font-body-md text-body-md">
 <span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
@@ -78,7 +80,7 @@ import Layout from '../../layouts/Layout.astro';
 <span>1 mismo negocio (una sola línea gráfica)</span>
 </li>
 </ul>
-<a href="/producto?service=creacion-contenido&plan=bronce" class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-sm text-label-sm hover:opacity-90 transition-opacity uppercase tracking-wider btn-magnetic press-effect text-center block"><span class="icon-wrap">CONTRATAR</span></a>
+<a href="/producto?service=creacion-contenido&plan=individual" class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-sm text-label-sm hover:opacity-90 transition-opacity uppercase tracking-wider btn-magnetic press-effect text-center block"><span class="icon-wrap">CONTRATAR</span></a>
 </div>
 <div class="bg-white p-8 rounded-lg shadow-xl border-2 border-primary ring-4 ring-primary-fixed transition-all flex flex-col relative scale-105 z-10">
 <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Recomendado</div>
@@ -88,7 +90,7 @@ import Layout from '../../layouts/Layout.astro';
 </div>
 </div>
 <h3 class="font-headline-md text-headline-md text-center mb-2">Paquete de 15 diseños</h3>
-<div class="text-center font-display-hero text-headline-lg text-primary mb-6">$2,200</div>
+<div class="text-center font-display-hero text-headline-lg text-primary mb-6">$100 <span class="text-lg font-normal text-on-surface-variant">USD</span></div>
 <ul class="space-y-4 mb-8 flex-grow">
 <li class="flex items-start gap-2 text-on-surface-variant font-body-md text-body-md">
 <span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
@@ -107,7 +109,7 @@ import Layout from '../../layouts/Layout.astro';
 <span>1 mismo negocio (una línea gráfica)</span>
 </li>
 </ul>
-<a href="/producto?service=creacion-contenido&plan=plata" class="w-full bg-primary-container text-on-primary py-4 rounded-lg font-label-sm text-label-sm hover:scale-105 transition-all uppercase tracking-wider font-bold shadow-md btn-magnetic press-effect text-center block"><span class="icon-wrap">CONTRATAR</span></a>
+<a href="/producto?service=creacion-contenido&plan=paquete-15" class="w-full bg-primary-container text-on-primary py-4 rounded-lg font-label-sm text-label-sm hover:scale-105 transition-all uppercase tracking-wider font-bold shadow-md btn-magnetic press-effect text-center block"><span class="icon-wrap">CONTRATAR</span></a>
 </div>
 <div class="bg-white p-8 rounded-lg shadow-sm border border-outline-variant hover:shadow-lg transition-all flex flex-col">
 <div class="mb-6 flex justify-center">
@@ -116,7 +118,7 @@ import Layout from '../../layouts/Layout.astro';
 </div>
 </div>
 <h3 class="font-headline-md text-headline-md text-center mb-2">Paquete de 20 diseños</h3>
-<div class="text-center font-display-hero text-headline-lg text-primary mb-6">$2,800</div>
+<div class="text-center font-display-hero text-headline-lg text-primary mb-6">$150 <span class="text-lg font-normal text-on-surface-variant">USD</span></div>
 <ul class="space-y-4 mb-8 flex-grow">
 <li class="flex items-start gap-2 text-on-surface-variant font-body-md text-body-md">
 <span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
@@ -135,7 +137,7 @@ import Layout from '../../layouts/Layout.astro';
 <span>1 mismo negocio (una línea gráfica)</span>
 </li>
 </ul>
-<a href="/producto?service=creacion-contenido&plan=oro" class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-sm text-label-sm hover:opacity-90 transition-opacity uppercase tracking-wider btn-magnetic press-effect text-center block"><span class="icon-wrap">CONTRATAR</span></a>
+<a href="/producto?service=creacion-contenido&plan=paquete-20" class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-sm text-label-sm hover:opacity-90 transition-opacity uppercase tracking-wider btn-magnetic press-effect text-center block"><span class="icon-wrap">CONTRATAR</span></a>
 </div>
 <div class="bg-white p-8 rounded-lg shadow-sm border border-outline-variant hover:shadow-lg transition-all flex flex-col">
 <div class="mb-6 flex justify-center">
@@ -144,7 +146,7 @@ import Layout from '../../layouts/Layout.astro';
 </div>
 </div>
 <h3 class="font-headline-md text-headline-md text-center mb-2">Paquete de 30 diseños</h3>
-<div class="text-center font-display-hero text-headline-lg text-primary mb-6">$3,000</div>
+<div class="text-center font-display-hero text-headline-lg text-primary mb-6">$160 <span class="text-lg font-normal text-on-surface-variant">USD</span></div>
 <ul class="space-y-4 mb-8 flex-grow">
 <li class="flex items-start gap-2 text-on-surface-variant font-body-md text-body-md">
 <span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
@@ -156,14 +158,14 @@ import Layout from '../../layouts/Layout.astro';
 </li>
 <li class="flex items-start gap-2 text-on-surface-variant font-body-md text-body-md">
 <span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
-<span>Tiempo de entrega: 6 días hábiles</span>
+<span>Tiempo de entrega: 5 días hábiles</span>
 </li>
 <li class="flex items-start gap-2 text-on-surface-variant font-body-md text-body-md">
 <span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
 <span>1 mismo negocio (una línea gráfica)</span>
 </li>
 </ul>
-<a href="/producto?service=creacion-contenido&plan=platino" class="w-full border-2 border-primary text-primary py-3 rounded-lg font-label-sm text-label-sm hover:bg-primary/5 transition-colors uppercase tracking-wider font-bold press-effect text-center block">CONTRATAR</a>
+<a href="/producto?service=creacion-contenido&plan=paquete-30" class="w-full border-2 border-primary text-primary py-3 rounded-lg font-label-sm text-label-sm hover:bg-primary/5 transition-colors uppercase tracking-wider font-bold press-effect text-center block">CONTRATAR</a>
 </div>
 </div>
 </div>

@@ -25,3 +25,16 @@ pnpm-debug.log*
 # cloudflare
 .wrangler/
 .agents/
+
+# claude code skill state (machine-specific symlink)
+.claude/skills/
+skills-lock.json
+
+# raw brand reference assets (not used at runtime; see public/ for site assets)
+/catalogo-pixel360.pdf
+/manual-de-identidad.pdf
+/Tipografías/
+/Logotipo.png
+/isotipo-favicon.png
+/campañas-imagen-new.webp
+/diseño ejemplo*.webp

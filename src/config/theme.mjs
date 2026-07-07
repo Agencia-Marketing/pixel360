@@ -1,50 +1,51 @@
 /* ============================================================
-   TEMA DEL SITIO — única fuente de marca (plantilla1 · Material Purple)
+   TEMA DEL SITIO — única fuente de marca (Pixel 360 · Corporate Blue)
    ------------------------------------------------------------
    Esto es LO ÚNICO que cambias al crear un sitio nuevo:
    colores, tipografías y logo. No toques el markup ni global.css.
+   Colores oficiales (manual de identidad): navy #1C3E79, cian #3DBFEF.
    ============================================================ */
 
 // --- Colores (hex). Las claves son los nombres de clase Tailwind:
 //     bg-primary, text-on-surface, bg-surface-container-high, etc.
 export const colors = {
   surface:                    '#ffffff',
-  'surface-dim':              '#f8f9fc',
+  'surface-dim':              '#f5f8fc',
   'surface-container-lowest': '#ffffff',
-  'surface-container-low':    '#f8f9fc',
-  'surface-container':        '#f1f0fb',
-  'surface-container-high':   '#ede9fe',
-  'surface-container-highest':'#ddd6fe',
-  'on-surface':               '#0f172a',
+  'surface-container-low':    '#f5f8fc',
+  'surface-container':        '#eaf2fb',
+  'surface-container-high':   '#dbe9f7',
+  'surface-container-highest':'#c3ddf3',
+  'on-surface':               '#0d1f38',
   'on-surface-variant':       '#475569',
-  outline:                    '#e2e8f0',
-  'outline-variant':          '#e2e8f0',
-  primary:                    '#7e22ce',
+  outline:                    '#dbe4ef',
+  'outline-variant':          '#dbe4ef',
+  primary:                    '#1C3E79',
   'on-primary':               '#ffffff',
-  'primary-container':        '#7e22ce',
+  'primary-container':        '#1C3E79',
   'on-primary-container':     '#ffffff',
-  'primary-fixed':            '#ede9fe',
-  'on-primary-fixed':         '#3b0764',
-  'primary-fixed-dim':        '#ddd6fe',
-  'inverse-primary':          '#c4b5fd',
-  secondary:                  '#6d28d9',
+  'primary-fixed':            '#dbeafc',
+  'on-primary-fixed':         '#0a1e40',
+  'primary-fixed-dim':        '#bcd8f5',
+  'inverse-primary':          '#7db8e8',
+  secondary:                  '#3DBFEF',
   'on-secondary':             '#ffffff',
   background:                 '#ffffff',
-  'on-background':            '#0f172a',
+  'on-background':            '#0d1f38',
   'body-text':                '#334155',
 };
 
 // --- Tipografías. Cambia las familias y el enlace de Google Fonts juntos.
 export const fonts = {
-  display:    'Syne, sans-serif',     // titulares
-  body:       'Outfit, sans-serif',   // cuerpo
-  googleHref: 'https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap',
+  display:    'Chakra Petch, sans-serif',  // titulares (tipografía corporativa)
+  body:       'Poppins, sans-serif',       // cuerpo (tipografía secundaria)
+  googleHref: 'https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap',
 };
 
-// --- Logo. El logotipo de plantilla1 es el nombre de marca en texto.
-//     Si `image` tiene una ruta (archivo en /public), se muestra la imagen
-//     en lugar del texto. El nombre de marca se edita en settings/site.json.
+// --- Logo. Imagotipo completo de Pixel 360 (archivo en /public).
+//     Si `image` tiene una ruta, se muestra la imagen en el header en lugar
+//     del texto de marca. El nombre de marca se edita en settings/site.json.
 export const logo = {
-  image: '',     // p.ej. '/logo.svg'
-  alt:   'Logo',
+  image: '/isotipo.png',
+  alt:   'Pixel 360',
 };

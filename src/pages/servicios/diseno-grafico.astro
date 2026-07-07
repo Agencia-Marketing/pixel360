@@ -1,16 +1,18 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 ---
-<Layout title="Diseño Gráfico | Plantilla 1">
-<section class="relative pt-32 pb-20 md:pt-48 md:pb-32 bg-primary overflow-hidden">
-<div class="max-w-container-max mx-auto px-gutter relative z-10 text-center reveal in-view">
-<h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-on-primary mb-6">
+<Layout title="Diseño Gráfico | Pixel 360">
+<section class="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-primary overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+<div class="space-y-6 reveal in-view">
+<h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-on-primary">
                 DISEÑO GRÁFICO
             </h1>
-<p class="max-w-3xl mx-auto font-body-lg text-body-lg text-on-primary/90 mb-12">
+<p class="font-body-lg text-body-lg text-on-primary/90 max-w-xl">
                 Damos vida a tus ideas con diseños visuales impactantes, desde branding y logotipos hasta material gráfico completo para tu marca.
             </p>
-<div class="relative w-full max-w-4xl mx-auto mt-12 transform hover:scale-[1.02] transition-transform duration-700">
+</div>
+<div class="relative reveal in-view">
 <img alt="Diseño Gráfico" class="w-full rounded-2xl shadow-2xl border border-white/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLnSXflK2O240IsFhJYQzcgOWK_Zwx4hZdbZ4Q_xkoT3BYT3K73sSBWEMvrj6lXjuZhiOpT_3Nh4ZawOCQeJzkmwo8WB9eMbdyDwXrgv63JLYwkx-dCv9Z6dSuu3O1zTUUZPKGxJEoleqwktDtqUUV9UQMTQSQr-G2QTALFux1cKHWik2cPYhadu13u2beZ0gUp5p7EvRqLAJN20nkRqTJoaV1F_p-sZLi8ntAz-zMUEMk0BZCeGOsLTLF_NH3Pr-JOqp3UvaETxWv"/>
 </div>
 </div>
@@ -22,26 +24,26 @@ import Layout from '../../layouts/Layout.astro';
 <section class="bg-white py-16">
 <div class="max-w-container-max mx-auto px-gutter">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-<div class="flex flex-col items-start gap-4 stagger-fade">
-<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary press-effect">
-<span class="material-symbols-outlined text-3xl">palette</span>
+<div class="flex flex-col items-center text-center gap-4 stagger-fade">
+<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center text-primary press-effect mb-2">
+<span class="material-symbols-outlined text-4xl">palette</span>
 </div>
 <h3 class="font-headline-md text-headline-md text-on-surface">Identidad Visual</h3>
-<p class="font-body-md text-body-md text-secondary">Creamos conceptos que te diferencian y aportan valor real a tu marca para que sea inolvidable.</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Creamos conceptos que te diferencian y aportan valor real a tu marca para que sea inolvidable.</p>
 </div>
-<div class="flex flex-col items-start gap-4 stagger-fade">
-<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary press-effect">
-<span class="material-symbols-outlined text-3xl">edit_square</span>
+<div class="flex flex-col items-center text-center gap-4 stagger-fade">
+<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center text-primary press-effect mb-2">
+<span class="material-symbols-outlined text-4xl">edit_square</span>
 </div>
 <h3 class="font-headline-md text-headline-md text-on-surface">Diseño Versátil</h3>
-<p class="font-body-md text-body-md text-secondary">Adaptamos tu imagen para formatos digitales y físicos, garantizando la consistencia visual.</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Adaptamos tu imagen para formatos digitales y físicos, garantizando la consistencia visual.</p>
 </div>
-<div class="flex flex-col items-start gap-4 stagger-fade">
-<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary press-effect">
-<span class="material-symbols-outlined text-3xl">visibility</span>
+<div class="flex flex-col items-center text-center gap-4 stagger-fade">
+<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center text-primary press-effect mb-2">
+<span class="material-symbols-outlined text-4xl">visibility</span>
 </div>
 <h3 class="font-headline-md text-headline-md text-on-surface">Impacto Visual</h3>
-<p class="font-body-md text-body-md text-secondary">Composiciones estratégicas para comunicar el mensaje correcto y persuadir a tu audiencia.</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Composiciones estratégicas para comunicar el mensaje correcto y persuadir a tu audiencia.</p>
 </div>
 </div>
 </div>
@@ -51,21 +53,13 @@ import Layout from '../../layouts/Layout.astro';
 <div class="order-2 md:order-1 reveal">
 <div class="bg-white p-12 rounded-xl shadow-sm border border-outline-variant flex flex-col gap-6">
 <h2 class="font-headline-lg text-headline-lg text-primary">Diseño de Marca</h2>
-<div class="text-4xl font-bold text-on-surface">$6,662 <span class="text-sm font-normal text-secondary">MXN</span></div>
-<p class="font-body-md text-body-md text-secondary">Más allá de un logotipo, creamos una identidad que conecte y se destaque en el mercado. Desarrollamos manuales de identidad visual que garantizarán el uso adecuado en el futuro.</p>
-<a href="/producto?service=diseno-grafico&plan=branding-completo" class="w-full bg-primary text-on-primary py-4 rounded-lg font-bold btn-magnetic press-effect shadow-md shadow-primary/20 tracking-widest text-center block"><span class="icon-wrap">CONTRATAR</span></a>
+<div class="text-4xl font-bold text-on-surface">$250 <span class="text-sm font-normal text-on-surface-variant">USD</span></div>
+<p class="font-body-md text-body-md text-on-surface-variant">Más allá de un logotipo: 3 propuestas de diseño, manual de identidad corporativa, logotipo en editable, JPG y PNG, y tus tipografías. Todo el material para usar tu marca correctamente.</p>
+<a href="/producto?service=diseno-grafico&plan=diseno-marca" class="w-full bg-primary text-on-primary py-4 rounded-lg font-bold btn-magnetic press-effect shadow-md shadow-primary/20 tracking-widest text-center block"><span class="icon-wrap">CONTRATAR</span></a>
 </div>
 </div>
-<div class="order-1 md:order-2 flex justify-center reveal">
-<div class="relative w-80 h-80 md:w-full md:max-w-md aspect-square rounded-full border-[12px] border-primary-fixed p-4 overflow-visible">
-<img alt="" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8ZIa7ozAxTtuyMwcwTTwnjdSZN35MKkeOUjXrrPQ6meEWgyXEqAZOlArZItSu8Fkbefbj3lqFhslzQFzhOJMzxD-RTJT0NCm7JsJsv165BhaaIO22bU2TrlNfCRKD8mpWl0iyLADgvEI0VegTuSuGl9bL6owNPy9FlpmfEJUpKBXoy9ev456k2s-pMtJ5lFeIqAWHk_anF4x7boy5UMh_ObrA-lJHDjNF1lQ6czT3fzIoenaOG-7ZmcumPVihj6n5lsCEr8QOGDx9"/>
-<div class="absolute -top-4 -right-4 bg-white p-3 rounded-full shadow-md text-primary press-effect">
-<span class="material-symbols-outlined">auto_fix_high</span>
-</div>
-<div class="absolute top-1/2 -left-8 bg-white p-3 rounded-full shadow-md text-primary press-effect">
-<span class="material-symbols-outlined">brush</span>
-</div>
-</div>
+<div class="order-1 md:order-2 reveal">
+<img alt="Diseño de marca" class="w-full h-auto rounded-xl shadow-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8ZIa7ozAxTtuyMwcwTTwnjdSZN35MKkeOUjXrrPQ6meEWgyXEqAZOlArZItSu8Fkbefbj3lqFhslzQFzhOJMzxD-RTJT0NCm7JsJsv165BhaaIO22bU2TrlNfCRKD8mpWl0iyLADgvEI0VegTuSuGl9bL6owNPy9FlpmfEJUpKBXoy9ev456k2s-pMtJ5lFeIqAWHk_anF4x7boy5UMh_ObrA-lJHDjNF1lQ6czT3fzIoenaOG-7ZmcumPVihj6n5lsCEr8QOGDx9"/>
 </div>
 </div>
 </section>
@@ -81,22 +75,22 @@ import Layout from '../../layouts/Layout.astro';
 <span class="material-symbols-outlined text-4xl">star</span>
 </div>
 <h3 class="font-headline-md text-headline-md mb-2">Naming</h3>
-<div class="text-3xl font-bold text-on-surface mb-6">$1,820 <span class="text-sm font-normal text-secondary">MXN</span></div>
+<div class="text-3xl font-bold text-on-surface mb-6">$150 <span class="text-sm font-normal text-on-surface-variant">USD</span></div>
 <ul class="flex flex-col gap-4 mb-8 flex-grow">
-<li class="flex items-center gap-3 text-secondary">
+<li class="flex items-center gap-3 text-on-surface-variant">
 <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
                             Búsqueda de naming
                         </li>
-<li class="flex items-center gap-3 text-secondary">
+<li class="flex items-center gap-3 text-on-surface-variant">
 <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
                             Evaluación de fonética
                         </li>
-<li class="flex items-center gap-3 text-secondary">
+<li class="flex items-center gap-3 text-on-surface-variant">
 <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
                             Revisión de disponibilidad de registro
                         </li>
 </ul>
-<a href="/producto?service=diseno-grafico&plan=logotipo-basico" class="w-full border-2 border-primary text-primary py-3 rounded-lg font-bold hover:bg-primary hover:text-white transition-all press-effect text-center block">CONTRATAR</a>
+<a href="/producto?service=diseno-grafico&plan=naming" class="w-full border-2 border-primary text-primary py-3 rounded-lg font-bold hover:bg-primary hover:text-white transition-all press-effect text-center block">CONTRATAR</a>
 </div>
 <div class="p-8 border-[3px] border-primary rounded-xl flex flex-col relative bg-surface-container-low shadow-xl scale-105 card-hover stagger-fade">
 <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Recomendado</div>
@@ -104,48 +98,48 @@ import Layout from '../../layouts/Layout.astro';
 <span class="material-symbols-outlined text-4xl">menu_book</span>
 </div>
 <h3 class="font-headline-md text-headline-md mb-2">Menú Digital Pyme</h3>
-<div class="text-3xl font-bold text-on-surface mb-6">$3,250 <span class="text-sm font-normal text-secondary">MXN</span></div>
+<div class="text-3xl font-bold text-on-surface mb-6">$50 <span class="text-sm font-normal text-on-surface-variant">USD</span></div>
 <ul class="flex flex-col gap-4 mb-8 flex-grow">
-<li class="flex items-center gap-3 text-secondary">
+<li class="flex items-center gap-3 text-on-surface-variant">
 <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
                             Diseño de menú digital
                         </li>
-<li class="flex items-center gap-3 text-secondary">
+<li class="flex items-center gap-3 text-on-surface-variant">
 <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
                             Diseño gráfico general
                         </li>
-<li class="flex items-center gap-3 text-secondary">
+<li class="flex items-center gap-3 text-on-surface-variant">
 <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
                             Código QR personalizado
                         </li>
 </ul>
-<a href="/producto?service=diseno-grafico&plan=manual-identidad" class="w-full bg-primary text-on-primary py-4 rounded-lg font-bold btn-magnetic press-effect shadow-lg shadow-primary/20 text-center block"><span class="icon-wrap">CONTRATAR</span></a>
+<a href="/producto?service=diseno-grafico&plan=menu-pyme" class="w-full bg-primary text-on-primary py-4 rounded-lg font-bold btn-magnetic press-effect shadow-lg shadow-primary/20 text-center block"><span class="icon-wrap">CONTRATAR</span></a>
 </div>
 <div class="p-8 border border-outline-variant rounded-xl flex flex-col hover:border-primary transition-colors card-hover stagger-fade">
 <div class="mb-6 text-primary">
 <span class="material-symbols-outlined text-4xl">storefront</span>
 </div>
 <h3 class="font-headline-md text-headline-md mb-2">Menú Digital Empresarial</h3>
-<div class="text-3xl font-bold text-on-surface mb-6">$3,900 <span class="text-sm font-normal text-secondary">MXN</span></div>
+<div class="text-3xl font-bold text-on-surface mb-6">$180 <span class="text-sm font-normal text-on-surface-variant">USD</span></div>
 <ul class="flex flex-col gap-4 mb-8 flex-grow">
-<li class="flex items-center gap-3 text-secondary">
+<li class="flex items-center gap-3 text-on-surface-variant">
 <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
                             Diseño fotográfico
                         </li>
-<li class="flex items-center gap-3 text-secondary">
+<li class="flex items-center gap-3 text-on-surface-variant">
 <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
                             Diseño gráfico general
                         </li>
-<li class="flex items-center gap-3 text-secondary">
+<li class="flex items-center gap-3 text-on-surface-variant">
 <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
                             Código QR personalizado
                         </li>
-<li class="flex items-center gap-3 text-secondary">
+<li class="flex items-center gap-3 text-on-surface-variant">
 <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
                             Menú físico para restaurantes
                         </li>
 </ul>
-<a href="/producto?service=diseno-grafico&plan=kit-social-media" class="w-full border-2 border-primary text-primary py-3 rounded-lg font-bold hover:bg-primary hover:text-white transition-all press-effect text-center block">CONTRATAR</a>
+<a href="/producto?service=diseno-grafico&plan=menu-empresarial" class="w-full border-2 border-primary text-primary py-3 rounded-lg font-bold hover:bg-primary hover:text-white transition-all press-effect text-center block">CONTRATAR</a>
 </div>
 </div>
 </div>
@@ -154,7 +148,7 @@ import Layout from '../../layouts/Layout.astro';
 <div class="max-w-container-max mx-auto px-gutter">
 <div class="mb-12 reveal">
 <h2 class="font-headline-lg text-headline-lg text-on-surface">Otros Servicios de Diseño Gráfico</h2>
-<p class="font-body-lg text-body-lg text-secondary">Si buscas algo en específico, revisa nuestra lista de servicios individuales.</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Si buscas algo en específico, revisa nuestra lista de servicios individuales.</p>
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
 <div class="overflow-hidden rounded-lg border border-outline-variant reveal">
@@ -167,28 +161,28 @@ import Layout from '../../layouts/Layout.astro';
 </thead>
 <tbody class="divide-y divide-outline-variant">
 <tr class="hover:bg-primary-fixed/30 transition-colors">
-<td class="px-6 py-4 text-secondary font-body-md">Diseño Logotipo</td>
-<td class="px-6 py-4 text-on-surface font-bold text-right">$1,500 MXN</td>
+<td class="px-6 py-4 text-on-surface-variant font-body-md">Diseño de flyer</td>
+<td class="px-6 py-4 text-on-surface font-bold text-right">$50 USD</td>
 </tr>
 <tr class="hover:bg-primary-fixed/30 transition-colors">
-<td class="px-6 py-4 text-secondary font-body-md">Vectorización</td>
-<td class="px-6 py-4 text-on-surface font-bold text-right">$1,000 MXN</td>
+<td class="px-6 py-4 text-on-surface-variant font-body-md">Cartel</td>
+<td class="px-6 py-4 text-on-surface font-bold text-right">$30 USD</td>
 </tr>
 <tr class="hover:bg-primary-fixed/30 transition-colors">
-<td class="px-6 py-4 text-secondary font-body-md">Cartel</td>
-<td class="px-6 py-4 text-on-surface font-bold text-right">$800 MXN</td>
+<td class="px-6 py-4 text-on-surface-variant font-body-md">Tríptico frente y vuelta</td>
+<td class="px-6 py-4 text-on-surface font-bold text-right">$20 USD</td>
 </tr>
 <tr class="hover:bg-primary-fixed/30 transition-colors">
-<td class="px-6 py-4 text-secondary font-body-md">Tríptico / Folleto</td>
-<td class="px-6 py-4 text-on-surface font-bold text-right">$1,200 MXN</td>
+<td class="px-6 py-4 text-on-surface-variant font-body-md">Infografía</td>
+<td class="px-6 py-4 text-on-surface font-bold text-right">$20 USD</td>
 </tr>
 <tr class="hover:bg-primary-fixed/30 transition-colors">
-<td class="px-6 py-4 text-secondary font-body-md">Banner Web</td>
-<td class="px-6 py-4 text-on-surface font-bold text-right">$500 MXN</td>
+<td class="px-6 py-4 text-on-surface-variant font-body-md">Lona 1m x 1m</td>
+<td class="px-6 py-4 text-on-surface font-bold text-right">$150 USD</td>
 </tr>
 <tr class="hover:bg-primary-fixed/30 transition-colors">
-<td class="px-6 py-4 text-secondary font-body-md">Página de Aterrizaje</td>
-<td class="px-6 py-4 text-on-surface font-bold text-right">$4,000 MXN</td>
+<td class="px-6 py-4 text-on-surface-variant font-body-md">Ilustración básica</td>
+<td class="px-6 py-4 text-on-surface font-bold text-right">$25 USD</td>
 </tr>
 </tbody>
 </table>
@@ -203,28 +197,28 @@ import Layout from '../../layouts/Layout.astro';
 </thead>
 <tbody class="divide-y divide-outline-variant">
 <tr class="hover:bg-primary-fixed/30 transition-colors">
-<td class="px-6 py-4 text-secondary font-body-md">Diseño de empaque</td>
-<td class="px-6 py-4 text-on-surface font-bold text-right">$2,500 MXN</td>
+<td class="px-6 py-4 text-on-surface-variant font-body-md">5 stickers básicos</td>
+<td class="px-6 py-4 text-on-surface font-bold text-right">$70 USD</td>
 </tr>
 <tr class="hover:bg-primary-fixed/30 transition-colors">
-<td class="px-6 py-4 text-secondary font-body-md">Tarjeta de presentación</td>
-<td class="px-6 py-4 text-on-surface font-bold text-right">$400 MXN</td>
+<td class="px-6 py-4 text-on-surface-variant font-body-md">Tarjeta de presentación</td>
+<td class="px-6 py-4 text-on-surface font-bold text-right">$30 USD</td>
 </tr>
 <tr class="hover:bg-primary-fixed/30 transition-colors">
-<td class="px-6 py-4 text-secondary font-body-md">Catálogo digital</td>
-<td class="px-6 py-4 text-on-surface font-bold text-right">$3,500 MXN</td>
+<td class="px-6 py-4 text-on-surface-variant font-body-md">Cover / header / portada</td>
+<td class="px-6 py-4 text-on-surface font-bold text-right">$50 USD</td>
 </tr>
 <tr class="hover:bg-primary-fixed/30 transition-colors">
-<td class="px-6 py-4 text-secondary font-body-md">Presentación Corporativa</td>
-<td class="px-6 py-4 text-on-surface font-bold text-right">$2,000 MXN</td>
+<td class="px-6 py-4 text-on-surface-variant font-body-md">Propuesta extra de logotipo</td>
+<td class="px-6 py-4 text-on-surface font-bold text-right">$75 USD</td>
 </tr>
 <tr class="hover:bg-primary-fixed/30 transition-colors">
-<td class="px-6 py-4 text-secondary font-body-md">Firma de Correo</td>
-<td class="px-6 py-4 text-on-surface font-bold text-right">$300 MXN</td>
+<td class="px-6 py-4 text-on-surface-variant font-body-md">Ronda de cambio adicional</td>
+<td class="px-6 py-4 text-on-surface font-bold text-right">$40 USD</td>
 </tr>
 <tr class="hover:bg-primary-fixed/30 transition-colors">
-<td class="px-6 py-4 text-secondary font-body-md">Edición de video corta</td>
-<td class="px-6 py-4 text-on-surface font-bold text-right">$1,500 MXN</td>
+<td class="px-6 py-4 text-on-surface-variant font-body-md">Naming</td>
+<td class="px-6 py-4 text-on-surface font-bold text-right">$150 USD</td>
 </tr>
 </tbody>
 </table>
@@ -236,7 +230,7 @@ import Layout from '../../layouts/Layout.astro';
 <div class="max-w-container-max mx-auto px-gutter">
 <div class="text-center mb-16 reveal">
 <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Nuestro Trabajo</h2>
-<p class="font-body-lg text-body-lg text-secondary">Algunos de nuestros proyectos recientes.</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Algunos de nuestros proyectos recientes.</p>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 <div class="group relative overflow-hidden rounded-xl bg-white aspect-[4/5] shadow-sm hover:shadow-xl transition-all card-hover stagger-fade">
@@ -244,36 +238,28 @@ import Layout from '../../layouts/Layout.astro';
 <h4 class="text-white font-bold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">Identidad Visual 3D y Minimalista</h4>
 <p class="text-white/80 text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-75">Functor Studio</p>
 </div>
-<div class="w-full h-full bg-surface-container-highest flex items-center justify-center">
-<span class="material-symbols-outlined text-6xl text-outline-variant">image</span>
-</div>
+<img src="/diseno-1.webp" alt="Proyecto de diseño Pixel 360" class="w-full h-full object-cover" />
 </div>
 <div class="group relative overflow-hidden rounded-xl bg-white aspect-[4/5] shadow-sm hover:shadow-xl transition-all card-hover stagger-fade">
 <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/80 transition-all duration-300 z-10 flex flex-col justify-end p-6">
 <h4 class="text-white font-bold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">Branding Corporativo y Ciberseguridad</h4>
 <p class="text-white/80 text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-75">Trezentos</p>
 </div>
-<div class="w-full h-full bg-surface-container-highest flex items-center justify-center">
-<span class="material-symbols-outlined text-6xl text-outline-variant">image</span>
-</div>
+<img src="/diseno-2.webp" alt="Proyecto de diseño Pixel 360" class="w-full h-full object-cover" />
 </div>
 <div class="group relative overflow-hidden rounded-xl bg-white aspect-[4/5] shadow-sm hover:shadow-xl transition-all card-hover stagger-fade">
 <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/80 transition-all duration-300 z-10 flex flex-col justify-end p-6">
 <h4 class="text-white font-bold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">Logotipo Estética</h4>
 <p class="text-white/80 text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-75">Beviederm</p>
 </div>
-<div class="w-full h-full bg-surface-container-highest flex items-center justify-center">
-<span class="material-symbols-outlined text-6xl text-outline-variant">image</span>
-</div>
+<img src="/diseno-3.webp" alt="Proyecto de diseño Pixel 360" class="w-full h-full object-cover" />
 </div>
 <div class="group relative overflow-hidden rounded-xl bg-white aspect-[4/5] shadow-sm hover:shadow-xl transition-all card-hover stagger-fade">
 <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/80 transition-all duration-300 z-10 flex flex-col justify-end p-6">
 <h4 class="text-white font-bold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">Diseño de Menú Digital</h4>
 <p class="text-white/80 text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-75">Alta Pinta</p>
 </div>
-<div class="w-full h-full bg-surface-container-highest flex items-center justify-center">
-<span class="material-symbols-outlined text-6xl text-outline-variant">image</span>
-</div>
+<img src="/diseno-4.webp" alt="Proyecto de diseño Pixel 360" class="w-full h-full object-cover" />
 </div>
 </div>
 </div>

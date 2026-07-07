@@ -8,7 +8,7 @@ export interface Props {
 }
 
 const { title, currentPage = 'inicio' } = Astro.props;
-const { brand, ctaLabel, nav, contact, footerTagline, footerPages, footerLinks, footerBottomLinks, copyright } = site;
+const { brand, ctaLabel, nav, contact, footerTagline, footerPages, footerBottomLinks, copyright } = site;
 const contactIcons: Record<string, string> = { phone: 'call', email: 'mail', location: 'location_on' };
 
 // --- Tema → variables CSS que consume global.css (única fuente: src/config/theme.mjs) ---
@@ -45,16 +45,17 @@ const rootStyle = ':root{' + Object.entries(cssVars).map(([k, v]) => `${k}:${v}`
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>{title}</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
   <link href={fonts.googleHref} rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
   <style set:html={rootStyle}></style>
 </head>
 <body class="bg-background text-on-surface font-body-md">
-  <header class="bg-primary-container top-0 sticky z-50 transition-all duration-300">
+  <header class="bg-surface border-b border-outline top-0 sticky z-50 transition-all duration-300">
     <nav class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
-      <a href="/" class="font-headline-md text-headline-md font-bold flex items-center gap-2" style="color:var(--color-on-surface)">
-        {logo.image && <img src={logo.image} alt={logo.alt} class="h-8 w-auto" />}
-        {brand}
+      <a href="/" class="font-headline-md text-headline-md font-bold flex items-center gap-2.5" style="color:var(--color-on-surface)">
+        {logo.image && <img src={logo.image} alt={logo.alt} class="h-11 w-auto" />}
+        <span>{brand}</span>
       </a>
       <div class="hidden md:flex items-center gap-8">
         {nav.map(item => (
@@ -74,19 +75,18 @@ const rootStyle = ':root{' + Object.entries(cssVars).map(([k, v]) => `${k}:${v}`
 
   <footer class="bg-on-primary-fixed px-gutter py-section-padding-mobile md:py-section-padding-desktop">
     <div class="max-w-container-max mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
         <div class="space-y-6">
           <div class="font-headline-md text-headline-md font-bold" style="color:#ffffff;">{brand}</div>
           <p class="font-body-md text-body-md" style="color:rgba(255,255,255,0.65);">
             {footerTagline}
           </p>
           <div class="flex gap-3">
-            <button class="w-10 h-10 rounded-full flex items-center justify-center transition-colors press-effect" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);">
-              <span class="material-symbols-outlined text-[20px]" style="color:#ffffff;">share</span>
-            </button>
-            <button class="w-10 h-10 rounded-full flex items-center justify-center transition-colors press-effect" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);">
-              <span class="material-symbols-outlined text-[20px]" style="color:#ffffff;">public</span>
-            </button>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-10 h-10 rounded-full flex items-center justify-center transition-colors press-effect" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" style="color:#ffffff;">
+                <path d="M14 13.5h2.5l1-4H14V7.5c0-1.03 0-2 2-2h1.5V2.14c-.33-.04-1.55-.14-2.84-.14C11.93 2 10 3.66 10 6.7v2.8H7v4h3V22h4v-8.5z"/>
+              </svg>
+            </a>
           </div>
         </div>
 
@@ -111,14 +111,6 @@ const rootStyle = ':root{' + Object.entries(cssVars).map(([k, v]) => `${k}:${v}`
           </ul>
         </div>
 
-        <div class="space-y-6">
-          <h5 class="font-label-sm text-label-sm uppercase tracking-widest" style="color:rgba(255,255,255,0.50);">Enlaces Rápidos</h5>
-          <ul class="space-y-3 font-body-md text-body-md">
-            {footerLinks.map(item => (
-              <li><a href={item.href} style="color:rgba(255,255,255,0.80);" onmouseover="this.style.color='var(--color-inverse-primary)'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">{item.label}</a></li>
-            ))}
-          </ul>
-        </div>
       </div>
 
       <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4" style="border-top:1px solid rgba(255,255,255,0.12);">
@@ -141,7 +133,7 @@ const rootStyle = ':root{' + Object.entries(cssVars).map(([k, v]) => `${k}:${v}`
             const header = d.querySelector('header');
             const scrolled = window.scrollY > 20;
             header.classList.toggle('shadow-lg', scrolled);
-            header.classList.toggle('bg-primary-container/95', scrolled);
+            header.classList.toggle('bg-surface/95', scrolled);
             header.classList.toggle('backdrop-blur-sm', scrolled);
             header.classList.toggle('h-16', scrolled);
             header.classList.toggle('h-20', !scrolled);

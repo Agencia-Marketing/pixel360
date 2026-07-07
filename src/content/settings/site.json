@@ -1,5 +1,5 @@
 {
-  "brand": "Plantilla 1.",
+  "brand": "Pixel 360",
   "ctaLabel": "Contáctanos",
   "nav": [
     { "label": "Inicio", "href": "/" },
@@ -8,26 +8,20 @@
     { "label": "Contacto", "href": "/contacto" }
   ],
   "contact": {
-    "phone": "+34 639 494 000",
-    "email": "contacto@plantilla1.com",
-    "location": "Madrid, España"
+    "phone": "+1 (786) 818 0611",
+    "email": "csanchez@pixel360.media",
+    "location": "Miami, FL · Atención LATAM"
   },
-  "footerTagline": "Soluciones digitales premium para impulsar el crecimiento de tu empresa.",
+  "footerTagline": "Agencia de marketing digital 360°. Impulsamos tu negocio con estrategia, tecnología e IA.",
   "footerPages": [
     { "label": "Inicio", "href": "/" },
     { "label": "Nosotros", "href": "/nosotros" },
     { "label": "Servicios", "href": "/#servicios" },
     { "label": "Contacto", "href": "/contacto" }
   ],
-  "footerLinks": [
-    { "label": "Blog", "href": "#" },
-    { "label": "FAQ", "href": "#" },
-    { "label": "Privacidad", "href": "#" },
-    { "label": "Términos", "href": "#" }
-  ],
   "footerBottomLinks": [
     { "label": "Términos", "href": "#" },
-    { "label": "Soporte", "href": "#" }
+    { "label": "Soporte", "href": "/contacto" }
   ],
-  "copyright": "© 2026 Plantilla 1 | Todos los derechos reservados."
+  "copyright": "© 2026 Pixel 360 | Todos los derechos reservados."
 }
